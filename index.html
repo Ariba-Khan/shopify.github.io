@@ -1,0 +1,682 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Dosis:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+
+  <!-- Glidejs -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Glide.js/3.4.1/css/glide.core.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Glide.js/3.4.1/css/glide.theme.css" />
+
+  <!-- Custom Stylesheet -->
+  <link rel="stylesheet" href="shopify.css" />
+  <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
+
+  <title>shopify.com</title>
+</head>
+
+<body>
+  <!-- 
+        ========================
+        Header
+        ========================
+     -->
+  <header id="header" class="header">
+    <!-- Navigation -->
+    <div class="navigation">
+      <div class="container">
+        <nav class="nav__center">
+          <div class="nav__header">
+            <div class="nav__logo">
+              <h1>SHOPI<span>FY</span></h1>
+            </div>
+
+
+            <div class="nav__hamburger">
+              <span>
+                <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAAAb0lEQVRIS+2VyQ3AIBADTWeURjqDyoL2sR+OKA8rIGIX4JFGhg1YlLCIC4E/My/VrjoBuIner7ZrppoJNWbH2Q5MtDyu0qrdSySvumjVs3GZambyW9VM6LBLz8m1/O+vtrPITNencTH1PnZJ9fmqKyfUDB8mdaD4AAAAAElFTkSuQmCC"/>
+              </span>
+            </div>
+          </div>
+
+
+          <div class="nav__menu">
+            <div class="menu__top">
+              <h1 class="nav__category">SHOPI<span>FY</span></h1>
+              <div class="close__toggle">
+              </div>
+            </div>
+            <ul class="nav__list">
+              <li class="nav__item">
+                <a href="#header" class="nav__link scroll-link">Home</a>
+              </li>
+
+              <li class="nav__item">
+                <a href="#featured" class="nav__link scroll-link">Featured</a>
+              </li>
+
+              <li class="nav__item">
+                <a href="#blog" class="nav__link scroll-link">Blog</a>
+              </li>
+
+              <li class="nav__item">
+                <a href="#newsletter" class="nav__link scroll-link">Subscribe</a>
+              </li>
+
+              <li class="nav__item">
+                <a href="#" class="nav__link">Login</a>
+              </li>
+
+              <li class="nav__item">
+                <a href="#" class="nav__link">Register</a>
+              </li>
+            </ul>
+            <ul class="nav__icons">
+            <a href="#" class="icon__item">
+              <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAABvElEQVRIS+WVjS1EURCFz1ZAB6gAFaACVIAKUAEdoAJUQAeoABWgAnQgXzLD5O67P8++l5WYZLPJ7r3zzcybc95Ec4rJnLhqAS9KWpW0aUW+SnqW9DRL0SXwsqQTSfsZAAWcSrr+TQE58I6kS0l0W4tbSQeSPmoH4/9dYKA34RAdkZwPwSQ4cyRpyX5j7OuzgEn6aJ1+2pgdmOZlGleStu2PCyumiZ92TKI9u7kbuiwlo1uWj1iRxLOvRgTTwbvdYLy5pUqTMqWXvl1HMHK569mtF+FdPwTZFbuOYKSBfIgWfcfEve/+CTDPFO32WhI770v5ZnLrtVxrJiUuHUs6r97+OYB5LJiLNS1l+iyRAqbAN4bQ4kYYyZnVgIPRfTVScBw3xoGWSxGn1Dzm3PYCdDdCJsC7TCF2Si4m1PzG6pINRnIf3IikJEy9On2BMGKMh7vVKOmV5TqsZGC8/sJwqwXMcha7rxkFdshIeZYbVgQwn4AvUnQ9jrGUWyV4DVwdWThAp15cFT4kmKkAR88e2c6HBANrhg8NLsF5V38b0hjgLviUo40FjnBUMWWjY4KBYzKdfj82OCvH/wf+AldqWx+170zGAAAAAElFTkSuQmCC"/>
+             </a>
+
+              <a href="#" class="icon__item">
+              <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAABXElEQVRIS82W0VHDQAxEXzogFQAVEDqACqAEqCBQQaAC6ABaoAIogQ6gA0gHzM7YmeQ4W6tgxtaPP+6ip13LUmaMFLORuOwLvgROmqLfgZesgCz4DHgCjgrQJ3ANvLkFZMCCvgaJz124Cz4APgA9+0LKT4HvSLkLvmosjvLpXJY/Rxdd8B2wipI15/eA7veGC34EllGy/wDfAA8m+BZQoYMo1uej5opiDSwANdkgYCVxVFtqlcx9x231fU1mNVWbKAvW72S71MtShUam3mlo77b3+4Cj12edTx4sWy8ae7vGpsZku6n0/FNXC6jvVwsiE9pS6vDOAvqs1nwWNFoMXQXJAcGrc7sL7KxA14HqqqyB3RXogqX8uFyVNXBmE7nwX8OlBtYgOHQzmveUU6o3UYJl85eZLHttvm13CR6yqcrCdppsMmBZ3Q7/rJXRfQ2TzZ/Ayc/qSE36fDTFP8Y1Nx8gsGNRAAAAAElFTkSuQmCC"/>
+              </a>
+
+              <a href="#" class="icon__item">
+                <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAABsElEQVRIS82W7TEEQRCG34sAESACREAGZIAMiAARIAJEwEWgRIAIkAERUI/q3mpzY3dmx9XpP/tjZ+bpfvtjZqIF2WRBXNWCdyRtm7NPkh4kvY9xvhS8KelKEt9oQA8l3dXCS8DA7iUt9xwO/LoGXgJG0g079MwARLon6ULSksm9XiP7EJhoHwP0NImKnKMGdmyOFAUewUi5n0gKmMgwossV0pHtQZk01zeSXnOeRDAHnBe5W75oGhz/sSuCkfGk/MyilbQb6Zixfwt+k0QKRg0J20fuqyOmfdJKLtJ4aNGQ1BFM1Xs/D52b+/8hqYu+BkxbrI4hhj3dhKsBfzZC2d4pOAbMUPC57FMr59NlGCi+rhl8YCQm1e4vSmxZTtckvdiaJjCttWIHxVke+XFixYnYBAYQLwTgtBwTigJEBW9BOoFLhqibc+yRuZR9NZemojlihyEjRZQaEd5mXix/BgZIzonMrz+u0fSJ5I5lwfFSn1koaW59DIw2oTB8QsWROVdwX6EgKe+rFsuOzKEDUYMn7lh7tpb7vmKHHnspJL7Bahzw/u7u9VpwDax37cLAX/OpdR8h/rcOAAAAAElFTkSuQmCC"/>
+
+                <span>2</span>
+              </a>
+            </ul>
+          </div>
+        </nav>
+      </div>
+    </div>
+
+    <!-- Hero -->
+    <div class="hero">
+      <div class="hero__content container">
+        <h1>
+          <span>Get <span class="color">20%</span> off on your first shopping
+            with</span>
+          <span>SHOPI<span class="color">FY</span>
+        </h1>
+        <a href="#" class="btn btn-hero">shop now</a>
+      </div>
+
+      <a href="#new__arrival" class="goto__next scroll-link">
+        <span>
+          <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAAA30lEQVRIS+2U0Q0CIQyGv9vATXQEnUSdwFmcQJ1ER9BNHME0uSbkhLZ4OXmBR2j78f8tDDRaQyMuHfw357vV3erFHPCGawXcgTNwDd7iAJyAHfAu5VhghW7G5GMALtDLGP+04BZYFO4nN7bgKVTTboDsfy1P8QNYB+A56AvYluyO9NiDV0NFiAeWGOl1CS7n2lM1xlSqQRGwBZ/2LgSNKtbiJeVVSmsVe/Cw0l/BOdurobVWp/1U22Wv+GSsny46XLkaApdV/BaXAlt13bM5it3iXXHqQLd61sDUJDez+gNm7iofryLeHwAAAABJRU5ErkJggg=="/>
+        </span>
+      </a>
+    </div>
+  </header>
+
+  <!-- Main -->
+  <main>
+    <!-- New Arrival -->
+    <section class="section new__arrival" id="new__arrival">
+      <div class="arrivals container">
+        <div class="title">
+          <h1 class="primary__title">New Arrival</h1>
+        </div>
+
+        <div class="arrival__center">
+          <div class="product">
+            <div class="img__container">
+              <img src="https://cdn.lulus.com/images/product/xlarge/1365282_206938.jpg" alt="" />
+            </div>
+            <div class="product__bottom">
+              <div class="rating">
+                <span>
+                  <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAAB/UlEQVRIS8WW3VXCMBTH7y2n5fgkLtCkE+gGwgS6gTiBOoE4gWwgTiBMYN3ADZowAT55LMdcTyJgC03a5sghj/m4v/xzcz8QDjTwQFzwBn/N+aW+dDcWU5/Le4GXGe9TQK8aiAoHYSLStnAvcC5YCgjnBoaQRrEc7B38mXHeCSgrgr4VJkeJEG3grRXnMp4A4FUZQs8Rmw/3Bq5Su4aFCk8wEYum8FaKvyQfIdB9lXECfOgyMfp3MGW8t/z1bc9ifBEqTJqqLinWsRmQOtWGSQMQzzYQgn4jNQh/oUX0jgDm+RUG791YzNY2NuB8zodA9NTIuO8mxOsoFpPfKFyNYlLwtVt3rphsSk+9V9UFtSXF69vmGT+DgLSfjusUNF7fglaC9eS/wiugVrBeMMmiQ1MgML/ca1igTrAJKR27HUq94A5oLdg8u+RjALppqzhi0pkVa1NmLpmuOqwtuK5OO8GuolB/EbyLmBjb9jnBueS3APRYD9ndgUCzkM1Ne1Q1nOCljKcEeGE5+7Gat8X7ImLyxAucS0aVBwnevglN4e8gTTZt0NZmV2diVawrFRK9bNn6AMDRtu9WLtG1uKzeJ453wmil0tZbmY+4o97eElkVF/xbqdLmu6J61wezgnXWygO4VQombTtIrT4IYBgpGNs6ktoE4hNKTc4cDPwD27HdH1CL64gAAAAASUVORK5CYII="/>   </span>
+                  <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAAB/UlEQVRIS8WW3VXCMBTH7y2n5fgkLtCkE+gGwgS6gTiBOoE4gWwgTiBMYN3ADZowAT55LMdcTyJgC03a5sghj/m4v/xzcz8QDjTwQFzwBn/N+aW+dDcWU5/Le4GXGe9TQK8aiAoHYSLStnAvcC5YCgjnBoaQRrEc7B38mXHeCSgrgr4VJkeJEG3grRXnMp4A4FUZQs8Rmw/3Bq5Su4aFCk8wEYum8FaKvyQfIdB9lXECfOgyMfp3MGW8t/z1bc9ifBEqTJqqLinWsRmQOtWGSQMQzzYQgn4jNQh/oUX0jgDm+RUG791YzNY2NuB8zodA9NTIuO8mxOsoFpPfKFyNYlLwtVt3rphsSk+9V9UFtSXF69vmGT+DgLSfjusUNF7fglaC9eS/wiugVrBeMMmiQ1MgML/ca1igTrAJKR27HUq94A5oLdg8u+RjALppqzhi0pkVa1NmLpmuOqwtuK5OO8GuolB/EbyLmBjb9jnBueS3APRYD9ndgUCzkM1Ne1Q1nOCljKcEeGE5+7Gat8X7ImLyxAucS0aVBwnevglN4e8gTTZt0NZmV2diVawrFRK9bNn6AMDRtu9WLtG1uKzeJ453wmil0tZbmY+4o97eElkVF/xbqdLmu6J61wezgnXWygO4VQombTtIrT4IYBgpGNs6ktoE4hNKTc4cDPwD27HdH1CL64gAAAAASUVORK5CYII="/>                <span>
+                  <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAAB/UlEQVRIS8WW3VXCMBTH7y2n5fgkLtCkE+gGwgS6gTiBOoE4gWwgTiBMYN3ADZowAT55LMdcTyJgC03a5sghj/m4v/xzcz8QDjTwQFzwBn/N+aW+dDcWU5/Le4GXGe9TQK8aiAoHYSLStnAvcC5YCgjnBoaQRrEc7B38mXHeCSgrgr4VJkeJEG3grRXnMp4A4FUZQs8Rmw/3Bq5Su4aFCk8wEYum8FaKvyQfIdB9lXECfOgyMfp3MGW8t/z1bc9ifBEqTJqqLinWsRmQOtWGSQMQzzYQgn4jNQh/oUX0jgDm+RUG791YzNY2NuB8zodA9NTIuO8mxOsoFpPfKFyNYlLwtVt3rphsSk+9V9UFtSXF69vmGT+DgLSfjusUNF7fglaC9eS/wiugVrBeMMmiQ1MgML/ca1igTrAJKR27HUq94A5oLdg8u+RjALppqzhi0pkVa1NmLpmuOqwtuK5OO8GuolB/EbyLmBjb9jnBueS3APRYD9ndgUCzkM1Ne1Q1nOCljKcEeGE5+7Gat8X7ImLyxAucS0aVBwnevglN4e8gTTZt0NZmV2diVawrFRK9bNn6AMDRtu9WLtG1uKzeJ453wmil0tZbmY+4o97eElkVF/xbqdLmu6J61wezgnXWygO4VQombTtIrT4IYBgpGNs6ktoE4hNKTc4cDPwD27HdH1CL64gAAAAASUVORK5CYII="/>                </span>
+                <span><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAAB/UlEQVRIS8WW3VXCMBTH7y2n5fgkLtCkE+gGwgS6gTiBOoE4gWwgTiBMYN3ADZowAT55LMdcTyJgC03a5sghj/m4v/xzcz8QDjTwQFzwBn/N+aW+dDcWU5/Le4GXGe9TQK8aiAoHYSLStnAvcC5YCgjnBoaQRrEc7B38mXHeCSgrgr4VJkeJEG3grRXnMp4A4FUZQs8Rmw/3Bq5Su4aFCk8wEYum8FaKvyQfIdB9lXECfOgyMfp3MGW8t/z1bc9ifBEqTJqqLinWsRmQOtWGSQMQzzYQgn4jNQh/oUX0jgDm+RUG791YzNY2NuB8zodA9NTIuO8mxOsoFpPfKFyNYlLwtVt3rphsSk+9V9UFtSXF69vmGT+DgLSfjusUNF7fglaC9eS/wiugVrBeMMmiQ1MgML/ca1igTrAJKR27HUq94A5oLdg8u+RjALppqzhi0pkVa1NmLpmuOqwtuK5OO8GuolB/EbyLmBjb9jnBueS3APRYD9ndgUCzkM1Ne1Q1nOCljKcEeGE5+7Gat8X7ImLyxAucS0aVBwnevglN4e8gTTZt0NZmV2diVawrFRK9bNn6AMDRtu9WLtG1uKzeJ453wmil0tZbmY+4o97eElkVF/xbqdLmu6J61wezgnXWygO4VQombTtIrT4IYBgpGNs6ktoE4hNKTc4cDPwD27HdH1CL64gAAAAASUVORK5CYII="/></span>
+               <span><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAAClUlEQVRIS8WW4XXaMBDH78zDtJ9KFrDkCZoNmkzQdoLCBCUThEwQNiiZoGSCwgbZAMkTkE99MS+6vpMtIgOysV/z0Bd/sKTf/U93fwnhTAPPxIXO4JdMfuOgB4ladAm+E3i7llcU0R8GosHrfqqWbeGdwLkSS0D4YmEIyzjR1+8O/ruWshfR2ge9Gkw/pkq1gbdWnOtkDoA/qhB6iEU2ejdwVS09FKAiiL7BC0zV5lR4K8UvWk4R6NYVFX9dkRHg3UCo6X8H01oOt8XZDoFgFUt9xRCv0DZ9g+mpqiuKuTcjMp+tEgYgXu4UEFiQ/Yf43fVvnskREP3azUN4ay2iJwSw6TcYPQ0S9ejm7cAHG4RzpmOhpf8714IrWjSmGXEcJ2pedGE5fFPwVK48lVaJMTDfbx0uuigCW9VItMvMrtfLTXyzqaT6MG1vETaq2ZuQr+UlFO42LIq/utdBVZcLWN2n8kRnschu2oDL7P0OQSuprpxZEa0Pn8ciG58CPzVrwT62ZtGjBRDYKgegRjh3BRKx0mLspdcPvNZAbO/2aOngTTdR9fKor49G58q1nAHQT442Frp2fpu5J4CLHkWgx77I7OUfGv75NmWnFly9FPAmFmrG0LJqrVuhwbF7CITmHwu0KXUTALrnhXznfgDYbCNzC4CT6mY065vojn3auVhThmrBW50sCPArAGg0OKLIerKzy+cSXvY7KFYPkZmUazax0BehY2lQLKhcyEZfOJDtLFi9ElqL7CHN96yRa8IGV/cyCYIPerJAPgPg1J21iyPXko+E72Knvnsf+63hqwy9rWxhHagPP4mCir3zPaoy2FKe+roCC4LZtfIIJseuwbpe5n/umowNzEIvkkYDaYJ0/X828D8qC1wuHHGAXwAAAABJRU5ErkJggg=="/>  </span>
+                  </div>
+              <h3> Ivory Floral Print Skirt</h3>
+              <a href="#">Add To Cart</a>
+            </div>
+          </div>
+          <div class="product">
+            <div class="img__container">
+              <img src="https://cdna.lystit.com/photos/b494-2014/03/21/jones-new-york-black-collection-plus-size-sleeveless-pleated-a-line-dress-product-1-18589880-0-624334116-normal.jpeg" alt="" />
+            </div>
+            <div class="product__bottom">
+              <div class="rating">
+                <span>                
+                <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAAB/UlEQVRIS8WW3VXCMBTH7y2n5fgkLtCkE+gGwgS6gTiBOoE4gWwgTiBMYN3ADZowAT55LMdcTyJgC03a5sghj/m4v/xzcz8QDjTwQFzwBn/N+aW+dDcWU5/Le4GXGe9TQK8aiAoHYSLStnAvcC5YCgjnBoaQRrEc7B38mXHeCSgrgr4VJkeJEG3grRXnMp4A4FUZQs8Rmw/3Bq5Su4aFCk8wEYum8FaKvyQfIdB9lXECfOgyMfp3MGW8t/z1bc9ifBEqTJqqLinWsRmQOtWGSQMQzzYQgn4jNQh/oUX0jgDm+RUG791YzNY2NuB8zodA9NTIuO8mxOsoFpPfKFyNYlLwtVt3rphsSk+9V9UFtSXF69vmGT+DgLSfjusUNF7fglaC9eS/wiugVrBeMMmiQ1MgML/ca1igTrAJKR27HUq94A5oLdg8u+RjALppqzhi0pkVa1NmLpmuOqwtuK5OO8GuolB/EbyLmBjb9jnBueS3APRYD9ndgUCzkM1Ne1Q1nOCljKcEeGE5+7Gat8X7ImLyxAucS0aVBwnevglN4e8gTTZt0NZmV2diVawrFRK9bNn6AMDRtu9WLtG1uKzeJ453wmil0tZbmY+4o97eElkVF/xbqdLmu6J61wezgnXWygO4VQombTtIrT4IYBgpGNs6ktoE4hNKTc4cDPwD27HdH1CL64gAAAAASUVORK5CYII="/>   </span>
+                <span><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAAB/UlEQVRIS8WW3VXCMBTH7y2n5fgkLtCkE+gGwgS6gTiBOoE4gWwgTiBMYN3ADZowAT55LMdcTyJgC03a5sghj/m4v/xzcz8QDjTwQFzwBn/N+aW+dDcWU5/Le4GXGe9TQK8aiAoHYSLStnAvcC5YCgjnBoaQRrEc7B38mXHeCSgrgr4VJkeJEG3grRXnMp4A4FUZQs8Rmw/3Bq5Su4aFCk8wEYum8FaKvyQfIdB9lXECfOgyMfp3MGW8t/z1bc9ifBEqTJqqLinWsRmQOtWGSQMQzzYQgn4jNQh/oUX0jgDm+RUG791YzNY2NuB8zodA9NTIuO8mxOsoFpPfKFyNYlLwtVt3rphsSk+9V9UFtSXF69vmGT+DgLSfjusUNF7fglaC9eS/wiugVrBeMMmiQ1MgML/ca1igTrAJKR27HUq94A5oLdg8u+RjALppqzhi0pkVa1NmLpmuOqwtuK5OO8GuolB/EbyLmBjb9jnBueS3APRYD9ndgUCzkM1Ne1Q1nOCljKcEeGE5+7Gat8X7ImLyxAucS0aVBwnevglN4e8gTTZt0NZmV2diVawrFRK9bNn6AMDRtu9WLtG1uKzeJ453wmil0tZbmY+4o97eElkVF/xbqdLmu6J61wezgnXWygO4VQombTtIrT4IYBgpGNs6ktoE4hNKTc4cDPwD27HdH1CL64gAAAAASUVORK5CYII="/>                <span>
+               <span> <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAAB/UlEQVRIS8WW3VXCMBTH7y2n5fgkLtCkE+gGwgS6gTiBOoE4gWwgTiBMYN3ADZowAT55LMdcTyJgC03a5sghj/m4v/xzcz8QDjTwQFzwBn/N+aW+dDcWU5/Le4GXGe9TQK8aiAoHYSLStnAvcC5YCgjnBoaQRrEc7B38mXHeCSgrgr4VJkeJEG3grRXnMp4A4FUZQs8Rmw/3Bq5Su4aFCk8wEYum8FaKvyQfIdB9lXECfOgyMfp3MGW8t/z1bc9ifBEqTJqqLinWsRmQOtWGSQMQzzYQgn4jNQh/oUX0jgDm+RUG791YzNY2NuB8zodA9NTIuO8mxOsoFpPfKFyNYlLwtVt3rphsSk+9V9UFtSXF69vmGT+DgLSfjusUNF7fglaC9eS/wiugVrBeMMmiQ1MgML/ca1igTrAJKR27HUq94A5oLdg8u+RjALppqzhi0pkVa1NmLpmuOqwtuK5OO8GuolB/EbyLmBjb9jnBueS3APRYD9ndgUCzkM1Ne1Q1nOCljKcEeGE5+7Gat8X7ImLyxAucS0aVBwnevglN4e8gTTZt0NZmV2diVawrFRK9bNn6AMDRtu9WLtG1uKzeJ453wmil0tZbmY+4o97eElkVF/xbqdLmu6J61wezgnXWygO4VQombTtIrT4IYBgpGNs6ktoE4hNKTc4cDPwD27HdH1CL64gAAAAASUVORK5CYII="/>                </span>
+                <span><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAAB/UlEQVRIS8WW3VXCMBTH7y2n5fgkLtCkE+gGwgS6gTiBOoE4gWwgTiBMYN3ADZowAT55LMdcTyJgC03a5sghj/m4v/xzcz8QDjTwQFzwBn/N+aW+dDcWU5/Le4GXGe9TQK8aiAoHYSLStnAvcC5YCgjnBoaQRrEc7B38mXHeCSgrgr4VJkeJEG3grRXnMp4A4FUZQs8Rmw/3Bq5Su4aFCk8wEYum8FaKvyQfIdB9lXECfOgyMfp3MGW8t/z1bc9ifBEqTJqqLinWsRmQOtWGSQMQzzYQgn4jNQh/oUX0jgDm+RUG791YzNY2NuB8zodA9NTIuO8mxOsoFpPfKFyNYlLwtVt3rphsSk+9V9UFtSXF69vmGT+DgLSfjusUNF7fglaC9eS/wiugVrBeMMmiQ1MgML/ca1igTrAJKR27HUq94A5oLdg8u+RjALppqzhi0pkVa1NmLpmuOqwtuK5OO8GuolB/EbyLmBjb9jnBueS3APRYD9ndgUCzkM1Ne1Q1nOCljKcEeGE5+7Gat8X7ImLyxAucS0aVBwnevglN4e8gTTZt0NZmV2diVawrFRK9bNn6AMDRtu9WLtG1uKzeJ453wmil0tZbmY+4o97eElkVF/xbqdLmu6J61wezgnXWygO4VQombTtIrT4IYBgpGNs6ktoE4hNKTc4cDPwD27HdH1CL64gAAAAASUVORK5CYII="/></span>
+               <span><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAAClUlEQVRIS8WW4XXaMBDH78zDtJ9KFrDkCZoNmkzQdoLCBCUThEwQNiiZoGSCwgbZAMkTkE99MS+6vpMtIgOysV/z0Bd/sKTf/U93fwnhTAPPxIXO4JdMfuOgB4ladAm+E3i7llcU0R8GosHrfqqWbeGdwLkSS0D4YmEIyzjR1+8O/ruWshfR2ge9Gkw/pkq1gbdWnOtkDoA/qhB6iEU2ejdwVS09FKAiiL7BC0zV5lR4K8UvWk4R6NYVFX9dkRHg3UCo6X8H01oOt8XZDoFgFUt9xRCv0DZ9g+mpqiuKuTcjMp+tEgYgXu4UEFiQ/Yf43fVvnskREP3azUN4ay2iJwSw6TcYPQ0S9ejm7cAHG4RzpmOhpf8714IrWjSmGXEcJ2pedGE5fFPwVK48lVaJMTDfbx0uuigCW9VItMvMrtfLTXyzqaT6MG1vETaq2ZuQr+UlFO42LIq/utdBVZcLWN2n8kRnschu2oDL7P0OQSuprpxZEa0Pn8ciG58CPzVrwT62ZtGjBRDYKgegRjh3BRKx0mLspdcPvNZAbO/2aOngTTdR9fKor49G58q1nAHQT442Frp2fpu5J4CLHkWgx77I7OUfGv75NmWnFly9FPAmFmrG0LJqrVuhwbF7CITmHwu0KXUTALrnhXznfgDYbCNzC4CT6mY065vojn3auVhThmrBW50sCPArAGg0OKLIerKzy+cSXvY7KFYPkZmUazax0BehY2lQLKhcyEZfOJDtLFi9ElqL7CHN96yRa8IGV/cyCYIPerJAPgPg1J21iyPXko+E72Knvnsf+63hqwy9rWxhHagPP4mCir3zPaoy2FKe+roCC4LZtfIIJseuwbpe5n/umowNzEIvkkYDaYJ0/X828D8qC1wuHHGAXwAAAABJRU5ErkJggg=="/>  </span>
+              </div>
+              <h3>Black Colored Frock</h3>
+              <a href="#">Add To Cart</a>
+            </div>
+          </div>
+          <div class="product">
+            <div class="img__container">
+              <img src="https://uploads-ssl.webflow.com/5d552994548be47b97db38c2/5db9bbe93178611c048ad133_tdevlinmcrinvestors.com%2055.png" alt="" />
+            </div>
+            <div class="product__bottom">
+              <div class="rating">
+                <span>                
+                <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAAB/UlEQVRIS8WW3VXCMBTH7y2n5fgkLtCkE+gGwgS6gTiBOoE4gWwgTiBMYN3ADZowAT55LMdcTyJgC03a5sghj/m4v/xzcz8QDjTwQFzwBn/N+aW+dDcWU5/Le4GXGe9TQK8aiAoHYSLStnAvcC5YCgjnBoaQRrEc7B38mXHeCSgrgr4VJkeJEG3grRXnMp4A4FUZQs8Rmw/3Bq5Su4aFCk8wEYum8FaKvyQfIdB9lXECfOgyMfp3MGW8t/z1bc9ifBEqTJqqLinWsRmQOtWGSQMQzzYQgn4jNQh/oUX0jgDm+RUG791YzNY2NuB8zodA9NTIuO8mxOsoFpPfKFyNYlLwtVt3rphsSk+9V9UFtSXF69vmGT+DgLSfjusUNF7fglaC9eS/wiugVrBeMMmiQ1MgML/ca1igTrAJKR27HUq94A5oLdg8u+RjALppqzhi0pkVa1NmLpmuOqwtuK5OO8GuolB/EbyLmBjb9jnBueS3APRYD9ndgUCzkM1Ne1Q1nOCljKcEeGE5+7Gat8X7ImLyxAucS0aVBwnevglN4e8gTTZt0NZmV2diVawrFRK9bNn6AMDRtu9WLtG1uKzeJ453wmil0tZbmY+4o97eElkVF/xbqdLmu6J61wezgnXWygO4VQombTtIrT4IYBgpGNs6ktoE4hNKTc4cDPwD27HdH1CL64gAAAAASUVORK5CYII="/>   </span>
+                <span><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAAB/UlEQVRIS8WW3VXCMBTH7y2n5fgkLtCkE+gGwgS6gTiBOoE4gWwgTiBMYN3ADZowAT55LMdcTyJgC03a5sghj/m4v/xzcz8QDjTwQFzwBn/N+aW+dDcWU5/Le4GXGe9TQK8aiAoHYSLStnAvcC5YCgjnBoaQRrEc7B38mXHeCSgrgr4VJkeJEG3grRXnMp4A4FUZQs8Rmw/3Bq5Su4aFCk8wEYum8FaKvyQfIdB9lXECfOgyMfp3MGW8t/z1bc9ifBEqTJqqLinWsRmQOtWGSQMQzzYQgn4jNQh/oUX0jgDm+RUG791YzNY2NuB8zodA9NTIuO8mxOsoFpPfKFyNYlLwtVt3rphsSk+9V9UFtSXF69vmGT+DgLSfjusUNF7fglaC9eS/wiugVrBeMMmiQ1MgML/ca1igTrAJKR27HUq94A5oLdg8u+RjALppqzhi0pkVa1NmLpmuOqwtuK5OO8GuolB/EbyLmBjb9jnBueS3APRYD9ndgUCzkM1Ne1Q1nOCljKcEeGE5+7Gat8X7ImLyxAucS0aVBwnevglN4e8gTTZt0NZmV2diVawrFRK9bNn6AMDRtu9WLtG1uKzeJ453wmil0tZbmY+4o97eElkVF/xbqdLmu6J61wezgnXWygO4VQombTtIrT4IYBgpGNs6ktoE4hNKTc4cDPwD27HdH1CL64gAAAAASUVORK5CYII="/>                <span>
+               <span> <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAAB/UlEQVRIS8WW3VXCMBTH7y2n5fgkLtCkE+gGwgS6gTiBOoE4gWwgTiBMYN3ADZowAT55LMdcTyJgC03a5sghj/m4v/xzcz8QDjTwQFzwBn/N+aW+dDcWU5/Le4GXGe9TQK8aiAoHYSLStnAvcC5YCgjnBoaQRrEc7B38mXHeCSgrgr4VJkeJEG3grRXnMp4A4FUZQs8Rmw/3Bq5Su4aFCk8wEYum8FaKvyQfIdB9lXECfOgyMfp3MGW8t/z1bc9ifBEqTJqqLinWsRmQOtWGSQMQzzYQgn4jNQh/oUX0jgDm+RUG791YzNY2NuB8zodA9NTIuO8mxOsoFpPfKFyNYlLwtVt3rphsSk+9V9UFtSXF69vmGT+DgLSfjusUNF7fglaC9eS/wiugVrBeMMmiQ1MgML/ca1igTrAJKR27HUq94A5oLdg8u+RjALppqzhi0pkVa1NmLpmuOqwtuK5OO8GuolB/EbyLmBjb9jnBueS3APRYD9ndgUCzkM1Ne1Q1nOCljKcEeGE5+7Gat8X7ImLyxAucS0aVBwnevglN4e8gTTZt0NZmV2diVawrFRK9bNn6AMDRtu9WLtG1uKzeJ453wmil0tZbmY+4o97eElkVF/xbqdLmu6J61wezgnXWygO4VQombTtIrT4IYBgpGNs6ktoE4hNKTc4cDPwD27HdH1CL64gAAAAASUVORK5CYII="/>                </span>
+                <span><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAAB/UlEQVRIS8WW3VXCMBTH7y2n5fgkLtCkE+gGwgS6gTiBOoE4gWwgTiBMYN3ADZowAT55LMdcTyJgC03a5sghj/m4v/xzcz8QDjTwQFzwBn/N+aW+dDcWU5/Le4GXGe9TQK8aiAoHYSLStnAvcC5YCgjnBoaQRrEc7B38mXHeCSgrgr4VJkeJEG3grRXnMp4A4FUZQs8Rmw/3Bq5Su4aFCk8wEYum8FaKvyQfIdB9lXECfOgyMfp3MGW8t/z1bc9ifBEqTJqqLinWsRmQOtWGSQMQzzYQgn4jNQh/oUX0jgDm+RUG791YzNY2NuB8zodA9NTIuO8mxOsoFpPfKFyNYlLwtVt3rphsSk+9V9UFtSXF69vmGT+DgLSfjusUNF7fglaC9eS/wiugVrBeMMmiQ1MgML/ca1igTrAJKR27HUq94A5oLdg8u+RjALppqzhi0pkVa1NmLpmuOqwtuK5OO8GuolB/EbyLmBjb9jnBueS3APRYD9ndgUCzkM1Ne1Q1nOCljKcEeGE5+7Gat8X7ImLyxAucS0aVBwnevglN4e8gTTZt0NZmV2diVawrFRK9bNn6AMDRtu9WLtG1uKzeJ453wmil0tZbmY+4o97eElkVF/xbqdLmu6J61wezgnXWygO4VQombTtIrT4IYBgpGNs6ktoE4hNKTc4cDPwD27HdH1CL64gAAAAASUVORK5CYII="/></span>
+               <span><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAAClUlEQVRIS8WW4XXaMBDH78zDtJ9KFrDkCZoNmkzQdoLCBCUThEwQNiiZoGSCwgbZAMkTkE99MS+6vpMtIgOysV/z0Bd/sKTf/U93fwnhTAPPxIXO4JdMfuOgB4ladAm+E3i7llcU0R8GosHrfqqWbeGdwLkSS0D4YmEIyzjR1+8O/ruWshfR2ge9Gkw/pkq1gbdWnOtkDoA/qhB6iEU2ejdwVS09FKAiiL7BC0zV5lR4K8UvWk4R6NYVFX9dkRHg3UCo6X8H01oOt8XZDoFgFUt9xRCv0DZ9g+mpqiuKuTcjMp+tEgYgXu4UEFiQ/Yf43fVvnskREP3azUN4ay2iJwSw6TcYPQ0S9ejm7cAHG4RzpmOhpf8714IrWjSmGXEcJ2pedGE5fFPwVK48lVaJMTDfbx0uuigCW9VItMvMrtfLTXyzqaT6MG1vETaq2ZuQr+UlFO42LIq/utdBVZcLWN2n8kRnschu2oDL7P0OQSuprpxZEa0Pn8ciG58CPzVrwT62ZtGjBRDYKgegRjh3BRKx0mLspdcPvNZAbO/2aOngTTdR9fKor49G58q1nAHQT442Frp2fpu5J4CLHkWgx77I7OUfGv75NmWnFly9FPAmFmrG0LJqrVuhwbF7CITmHwu0KXUTALrnhXznfgDYbCNzC4CT6mY065vojn3auVhThmrBW50sCPArAGg0OKLIerKzy+cSXvY7KFYPkZmUazax0BehY2lQLKhcyEZfOJDtLFi9ElqL7CHN96yRa8IGV/cyCYIPerJAPgPg1J21iyPXko+E72Knvnsf+63hqwy9rWxhHagPP4mCir3zPaoy2FKe+roCC4LZtfIIJseuwbpe5n/umowNzEIvkkYDaYJ0/X828D8qC1wuHHGAXwAAAABJRU5ErkJggg=="/>  </span>
+           
+          </div>
+              <h3>Dark-Blue Full Sleeves T-Shirt</h3>
+              <a href="#">Add To Cart</a>
+            </div>
+          </div>
+          <div class="product">
+            <div class="img__container">
+              <img src="http://asset1.marksandspencer.com/is/image/mands/T42_7048_IC_IS?$PDP_MAXI_ZOOM$" alt="" />
+            </div>
+            <div class="product__bottom">
+              <div class="rating">
+                <span>                
+                <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAAB/UlEQVRIS8WW3VXCMBTH7y2n5fgkLtCkE+gGwgS6gTiBOoE4gWwgTiBMYN3ADZowAT55LMdcTyJgC03a5sghj/m4v/xzcz8QDjTwQFzwBn/N+aW+dDcWU5/Le4GXGe9TQK8aiAoHYSLStnAvcC5YCgjnBoaQRrEc7B38mXHeCSgrgr4VJkeJEG3grRXnMp4A4FUZQs8Rmw/3Bq5Su4aFCk8wEYum8FaKvyQfIdB9lXECfOgyMfp3MGW8t/z1bc9ifBEqTJqqLinWsRmQOtWGSQMQzzYQgn4jNQh/oUX0jgDm+RUG791YzNY2NuB8zodA9NTIuO8mxOsoFpPfKFyNYlLwtVt3rphsSk+9V9UFtSXF69vmGT+DgLSfjusUNF7fglaC9eS/wiugVrBeMMmiQ1MgML/ca1igTrAJKR27HUq94A5oLdg8u+RjALppqzhi0pkVa1NmLpmuOqwtuK5OO8GuolB/EbyLmBjb9jnBueS3APRYD9ndgUCzkM1Ne1Q1nOCljKcEeGE5+7Gat8X7ImLyxAucS0aVBwnevglN4e8gTTZt0NZmV2diVawrFRK9bNn6AMDRtu9WLtG1uKzeJ453wmil0tZbmY+4o97eElkVF/xbqdLmu6J61wezgnXWygO4VQombTtIrT4IYBgpGNs6ktoE4hNKTc4cDPwD27HdH1CL64gAAAAASUVORK5CYII="/>   </span>
+                <span><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAAB/UlEQVRIS8WW3VXCMBTH7y2n5fgkLtCkE+gGwgS6gTiBOoE4gWwgTiBMYN3ADZowAT55LMdcTyJgC03a5sghj/m4v/xzcz8QDjTwQFzwBn/N+aW+dDcWU5/Le4GXGe9TQK8aiAoHYSLStnAvcC5YCgjnBoaQRrEc7B38mXHeCSgrgr4VJkeJEG3grRXnMp4A4FUZQs8Rmw/3Bq5Su4aFCk8wEYum8FaKvyQfIdB9lXECfOgyMfp3MGW8t/z1bc9ifBEqTJqqLinWsRmQOtWGSQMQzzYQgn4jNQh/oUX0jgDm+RUG791YzNY2NuB8zodA9NTIuO8mxOsoFpPfKFyNYlLwtVt3rphsSk+9V9UFtSXF69vmGT+DgLSfjusUNF7fglaC9eS/wiugVrBeMMmiQ1MgML/ca1igTrAJKR27HUq94A5oLdg8u+RjALppqzhi0pkVa1NmLpmuOqwtuK5OO8GuolB/EbyLmBjb9jnBueS3APRYD9ndgUCzkM1Ne1Q1nOCljKcEeGE5+7Gat8X7ImLyxAucS0aVBwnevglN4e8gTTZt0NZmV2diVawrFRK9bNn6AMDRtu9WLtG1uKzeJ453wmil0tZbmY+4o97eElkVF/xbqdLmu6J61wezgnXWygO4VQombTtIrT4IYBgpGNs6ktoE4hNKTc4cDPwD27HdH1CL64gAAAAASUVORK5CYII="/>                <span>
+               <span> <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAAB/UlEQVRIS8WW3VXCMBTH7y2n5fgkLtCkE+gGwgS6gTiBOoE4gWwgTiBMYN3ADZowAT55LMdcTyJgC03a5sghj/m4v/xzcz8QDjTwQFzwBn/N+aW+dDcWU5/Le4GXGe9TQK8aiAoHYSLStnAvcC5YCgjnBoaQRrEc7B38mXHeCSgrgr4VJkeJEG3grRXnMp4A4FUZQs8Rmw/3Bq5Su4aFCk8wEYum8FaKvyQfIdB9lXECfOgyMfp3MGW8t/z1bc9ifBEqTJqqLinWsRmQOtWGSQMQzzYQgn4jNQh/oUX0jgDm+RUG791YzNY2NuB8zodA9NTIuO8mxOsoFpPfKFyNYlLwtVt3rphsSk+9V9UFtSXF69vmGT+DgLSfjusUNF7fglaC9eS/wiugVrBeMMmiQ1MgML/ca1igTrAJKR27HUq94A5oLdg8u+RjALppqzhi0pkVa1NmLpmuOqwtuK5OO8GuolB/EbyLmBjb9jnBueS3APRYD9ndgUCzkM1Ne1Q1nOCljKcEeGE5+7Gat8X7ImLyxAucS0aVBwnevglN4e8gTTZt0NZmV2diVawrFRK9bNn6AMDRtu9WLtG1uKzeJ453wmil0tZbmY+4o97eElkVF/xbqdLmu6J61wezgnXWygO4VQombTtIrT4IYBgpGNs6ktoE4hNKTc4cDPwD27HdH1CL64gAAAAASUVORK5CYII="/>                </span>
+                <span><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAAB/UlEQVRIS8WW3VXCMBTH7y2n5fgkLtCkE+gGwgS6gTiBOoE4gWwgTiBMYN3ADZowAT55LMdcTyJgC03a5sghj/m4v/xzcz8QDjTwQFzwBn/N+aW+dDcWU5/Le4GXGe9TQK8aiAoHYSLStnAvcC5YCgjnBoaQRrEc7B38mXHeCSgrgr4VJkeJEG3grRXnMp4A4FUZQs8Rmw/3Bq5Su4aFCk8wEYum8FaKvyQfIdB9lXECfOgyMfp3MGW8t/z1bc9ifBEqTJqqLinWsRmQOtWGSQMQzzYQgn4jNQh/oUX0jgDm+RUG791YzNY2NuB8zodA9NTIuO8mxOsoFpPfKFyNYlLwtVt3rphsSk+9V9UFtSXF69vmGT+DgLSfjusUNF7fglaC9eS/wiugVrBeMMmiQ1MgML/ca1igTrAJKR27HUq94A5oLdg8u+RjALppqzhi0pkVa1NmLpmuOqwtuK5OO8GuolB/EbyLmBjb9jnBueS3APRYD9ndgUCzkM1Ne1Q1nOCljKcEeGE5+7Gat8X7ImLyxAucS0aVBwnevglN4e8gTTZt0NZmV2diVawrFRK9bNn6AMDRtu9WLtG1uKzeJ453wmil0tZbmY+4o97eElkVF/xbqdLmu6J61wezgnXWygO4VQombTtIrT4IYBgpGNs6ktoE4hNKTc4cDPwD27HdH1CL64gAAAAASUVORK5CYII="/></span>
+               <span><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAAClUlEQVRIS8WW4XXaMBDH78zDtJ9KFrDkCZoNmkzQdoLCBCUThEwQNiiZoGSCwgbZAMkTkE99MS+6vpMtIgOysV/z0Bd/sKTf/U93fwnhTAPPxIXO4JdMfuOgB4ladAm+E3i7llcU0R8GosHrfqqWbeGdwLkSS0D4YmEIyzjR1+8O/ruWshfR2ge9Gkw/pkq1gbdWnOtkDoA/qhB6iEU2ejdwVS09FKAiiL7BC0zV5lR4K8UvWk4R6NYVFX9dkRHg3UCo6X8H01oOt8XZDoFgFUt9xRCv0DZ9g+mpqiuKuTcjMp+tEgYgXu4UEFiQ/Yf43fVvnskREP3azUN4ay2iJwSw6TcYPQ0S9ejm7cAHG4RzpmOhpf8714IrWjSmGXEcJ2pedGE5fFPwVK48lVaJMTDfbx0uuigCW9VItMvMrtfLTXyzqaT6MG1vETaq2ZuQr+UlFO42LIq/utdBVZcLWN2n8kRnschu2oDL7P0OQSuprpxZEa0Pn8ciG58CPzVrwT62ZtGjBRDYKgegRjh3BRKx0mLspdcPvNZAbO/2aOngTTdR9fKor49G58q1nAHQT442Frp2fpu5J4CLHkWgx77I7OUfGv75NmWnFly9FPAmFmrG0LJqrVuhwbF7CITmHwu0KXUTALrnhXznfgDYbCNzC4CT6mY065vojn3auVhThmrBW50sCPArAGg0OKLIerKzy+cSXvY7KFYPkZmUazax0BehY2lQLKhcyEZfOJDtLFi9ElqL7CHN96yRa8IGV/cyCYIPerJAPgPg1J21iyPXko+E72Knvnsf+63hqwy9rWxhHagPP4mCir3zPaoy2FKe+roCC4LZtfIIJseuwbpe5n/umowNzEIvkkYDaYJ0/X828D8qC1wuHHGAXwAAAABJRU5ErkJggg=="/>  </span>
+              </div>
+              <h3>Floral Lace A-line Dress</h3>
+              <a href="#">Add To Cart</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Cart Slide -->
+    <section class="cart__slide">                                                <!--slide section begins from here-->
+      <div class="arrival__slide container">                                     <!--div class-->
+        <div class="glide" id="glide1">                                           <!--smooth sliding area-->
+         <div class="glide__track" data-glide-el="track">
+           <ul class="glide__slides">
+              <li class="glide__slide">
+                <div class="arrival">
+                  <div class="cart__like">
+                    <div class="image__holder">
+                      <img src="https://i.pinimg.com/originals/06/71/d2/0671d2b945696fd4c334fc75450e8c95.jpg" alt="" />
+                    </div>
+                    <div class="cart__details">
+                      <h1>Women Yellow Solid Denim Jacket</h1>
+                      <p>
+                        Yellow solid denim jacket, has a spread collar, button closure, straight Hem, 2 pockets,long sleeves and a flower patch 
+                        over one side of the shoulder.
+                      </p>
+                      <div class="rating">
+                          <span>                
+                          <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAAB/UlEQVRIS8WW3VXCMBTH7y2n5fgkLtCkE+gGwgS6gTiBOoE4gWwgTiBMYN3ADZowAT55LMdcTyJgC03a5sghj/m4v/xzcz8QDjTwQFzwBn/N+aW+dDcWU5/Le4GXGe9TQK8aiAoHYSLStnAvcC5YCgjnBoaQRrEc7B38mXHeCSgrgr4VJkeJEG3grRXnMp4A4FUZQs8Rmw/3Bq5Su4aFCk8wEYum8FaKvyQfIdB9lXECfOgyMfp3MGW8t/z1bc9ifBEqTJqqLinWsRmQOtWGSQMQzzYQgn4jNQh/oUX0jgDm+RUG791YzNY2NuB8zodA9NTIuO8mxOsoFpPfKFyNYlLwtVt3rphsSk+9V9UFtSXF69vmGT+DgLSfjusUNF7fglaC9eS/wiugVrBeMMmiQ1MgML/ca1igTrAJKR27HUq94A5oLdg8u+RjALppqzhi0pkVa1NmLpmuOqwtuK5OO8GuolB/EbyLmBjb9jnBueS3APRYD9ndgUCzkM1Ne1Q1nOCljKcEeGE5+7Gat8X7ImLyxAucS0aVBwnevglN4e8gTTZt0NZmV2diVawrFRK9bNn6AMDRtu9WLtG1uKzeJ453wmil0tZbmY+4o97eElkVF/xbqdLmu6J61wezgnXWygO4VQombTtIrT4IYBgpGNs6ktoE4hNKTc4cDPwD27HdH1CL64gAAAAASUVORK5CYII="/>   </span>
+                          <span><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAAB/UlEQVRIS8WW3VXCMBTH7y2n5fgkLtCkE+gGwgS6gTiBOoE4gWwgTiBMYN3ADZowAT55LMdcTyJgC03a5sghj/m4v/xzcz8QDjTwQFzwBn/N+aW+dDcWU5/Le4GXGe9TQK8aiAoHYSLStnAvcC5YCgjnBoaQRrEc7B38mXHeCSgrgr4VJkeJEG3grRXnMp4A4FUZQs8Rmw/3Bq5Su4aFCk8wEYum8FaKvyQfIdB9lXECfOgyMfp3MGW8t/z1bc9ifBEqTJqqLinWsRmQOtWGSQMQzzYQgn4jNQh/oUX0jgDm+RUG791YzNY2NuB8zodA9NTIuO8mxOsoFpPfKFyNYlLwtVt3rphsSk+9V9UFtSXF69vmGT+DgLSfjusUNF7fglaC9eS/wiugVrBeMMmiQ1MgML/ca1igTrAJKR27HUq94A5oLdg8u+RjALppqzhi0pkVa1NmLpmuOqwtuK5OO8GuolB/EbyLmBjb9jnBueS3APRYD9ndgUCzkM1Ne1Q1nOCljKcEeGE5+7Gat8X7ImLyxAucS0aVBwnevglN4e8gTTZt0NZmV2diVawrFRK9bNn6AMDRtu9WLtG1uKzeJ453wmil0tZbmY+4o97eElkVF/xbqdLmu6J61wezgnXWygO4VQombTtIrT4IYBgpGNs6ktoE4hNKTc4cDPwD27HdH1CL64gAAAAASUVORK5CYII="/>                <span>
+                         <span> <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAAB/UlEQVRIS8WW3VXCMBTH7y2n5fgkLtCkE+gGwgS6gTiBOoE4gWwgTiBMYN3ADZowAT55LMdcTyJgC03a5sghj/m4v/xzcz8QDjTwQFzwBn/N+aW+dDcWU5/Le4GXGe9TQK8aiAoHYSLStnAvcC5YCgjnBoaQRrEc7B38mXHeCSgrgr4VJkeJEG3grRXnMp4A4FUZQs8Rmw/3Bq5Su4aFCk8wEYum8FaKvyQfIdB9lXECfOgyMfp3MGW8t/z1bc9ifBEqTJqqLinWsRmQOtWGSQMQzzYQgn4jNQh/oUX0jgDm+RUG791YzNY2NuB8zodA9NTIuO8mxOsoFpPfKFyNYlLwtVt3rphsSk+9V9UFtSXF69vmGT+DgLSfjusUNF7fglaC9eS/wiugVrBeMMmiQ1MgML/ca1igTrAJKR27HUq94A5oLdg8u+RjALppqzhi0pkVa1NmLpmuOqwtuK5OO8GuolB/EbyLmBjb9jnBueS3APRYD9ndgUCzkM1Ne1Q1nOCljKcEeGE5+7Gat8X7ImLyxAucS0aVBwnevglN4e8gTTZt0NZmV2diVawrFRK9bNn6AMDRtu9WLtG1uKzeJ453wmil0tZbmY+4o97eElkVF/xbqdLmu6J61wezgnXWygO4VQombTtIrT4IYBgpGNs6ktoE4hNKTc4cDPwD27HdH1CL64gAAAAASUVORK5CYII="/>                </span>
+                          <span><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAAB/UlEQVRIS8WW3VXCMBTH7y2n5fgkLtCkE+gGwgS6gTiBOoE4gWwgTiBMYN3ADZowAT55LMdcTyJgC03a5sghj/m4v/xzcz8QDjTwQFzwBn/N+aW+dDcWU5/Le4GXGe9TQK8aiAoHYSLStnAvcC5YCgjnBoaQRrEc7B38mXHeCSgrgr4VJkeJEG3grRXnMp4A4FUZQs8Rmw/3Bq5Su4aFCk8wEYum8FaKvyQfIdB9lXECfOgyMfp3MGW8t/z1bc9ifBEqTJqqLinWsRmQOtWGSQMQzzYQgn4jNQh/oUX0jgDm+RUG791YzNY2NuB8zodA9NTIuO8mxOsoFpPfKFyNYlLwtVt3rphsSk+9V9UFtSXF69vmGT+DgLSfjusUNF7fglaC9eS/wiugVrBeMMmiQ1MgML/ca1igTrAJKR27HUq94A5oLdg8u+RjALppqzhi0pkVa1NmLpmuOqwtuK5OO8GuolB/EbyLmBjb9jnBueS3APRYD9ndgUCzkM1Ne1Q1nOCljKcEeGE5+7Gat8X7ImLyxAucS0aVBwnevglN4e8gTTZt0NZmV2diVawrFRK9bNn6AMDRtu9WLtG1uKzeJ453wmil0tZbmY+4o97eElkVF/xbqdLmu6J61wezgnXWygO4VQombTtIrT4IYBgpGNs6ktoE4hNKTc4cDPwD27HdH1CL64gAAAAASUVORK5CYII="/></span>
+                         <span><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAAClUlEQVRIS8WW4XXaMBDH78zDtJ9KFrDkCZoNmkzQdoLCBCUThEwQNiiZoGSCwgbZAMkTkE99MS+6vpMtIgOysV/z0Bd/sKTf/U93fwnhTAPPxIXO4JdMfuOgB4ladAm+E3i7llcU0R8GosHrfqqWbeGdwLkSS0D4YmEIyzjR1+8O/ruWshfR2ge9Gkw/pkq1gbdWnOtkDoA/qhB6iEU2ejdwVS09FKAiiL7BC0zV5lR4K8UvWk4R6NYVFX9dkRHg3UCo6X8H01oOt8XZDoFgFUt9xRCv0DZ9g+mpqiuKuTcjMp+tEgYgXu4UEFiQ/Yf43fVvnskREP3azUN4ay2iJwSw6TcYPQ0S9ejm7cAHG4RzpmOhpf8714IrWjSmGXEcJ2pedGE5fFPwVK48lVaJMTDfbx0uuigCW9VItMvMrtfLTXyzqaT6MG1vETaq2ZuQr+UlFO42LIq/utdBVZcLWN2n8kRnschu2oDL7P0OQSuprpxZEa0Pn8ciG58CPzVrwT62ZtGjBRDYKgegRjh3BRKx0mLspdcPvNZAbO/2aOngTTdR9fKor49G58q1nAHQT442Frp2fpu5J4CLHkWgx77I7OUfGv75NmWnFly9FPAmFmrG0LJqrVuhwbF7CITmHwu0KXUTALrnhXznfgDYbCNzC4CT6mY065vojn3auVhThmrBW50sCPArAGg0OKLIerKzy+cSXvY7KFYPkZmUazax0BehY2lQLKhcyEZfOJDtLFi9ElqL7CHN96yRa8IGV/cyCYIPerJAPgPg1J21iyPXko+E72Knvnsf+63hqwy9rWxhHagPP4mCir3zPaoy2FKe+roCC4LZtfIIJseuwbpe5n/umowNzEIvkkYDaYJ0/X828D8qC1wuHHGAXwAAAABJRU5ErkJggg=="/>  </span>
+                    </div>
+                      <div class="colors">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                      </div>
+                      <div class="btn__group">
+                        <button>Add To Cart</button>
+                        <button>Rs. 1599</button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </li>
+              <li class="glide__slide">
+                <div class="arrival">
+                  <div class="cart__like">
+                    <div class="image__holder">
+                      <img src="http://nadiazheng.com/wp-content/uploads/2016/01/Montreal-ecommerce-online-catalogue-women-clothing-studio-fashion-photo-shoot-2.jpg" alt="" />
+                    </div>
+                    <div class="cart__details">
+                      <h1>Black Solid Leather Jacket</h1>
+                      <p>
+                        Black solid  biker jacket, has a lapel collar, asymmetric zip closure, long sleeves, and polyster lining.<br>
+                        Material: Leather<br>
+                      </p>
+                      <div class="rating">
+                        <span>
+                          <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAAB/UlEQVRIS8WW3VXCMBTH7y2n5fgkLtCkE+gGwgS6gTiBOoE4gWwgTiBMYN3ADZowAT55LMdcTyJgC03a5sghj/m4v/xzcz8QDjTwQFzwBn/N+aW+dDcWU5/Le4GXGe9TQK8aiAoHYSLStnAvcC5YCgjnBoaQRrEc7B38mXHeCSgrgr4VJkeJEG3grRXnMp4A4FUZQs8Rmw/3Bq5Su4aFCk8wEYum8FaKvyQfIdB9lXECfOgyMfp3MGW8t/z1bc9ifBEqTJqqLinWsRmQOtWGSQMQzzYQgn4jNQh/oUX0jgDm+RUG791YzNY2NuB8zodA9NTIuO8mxOsoFpPfKFyNYlLwtVt3rphsSk+9V9UFtSXF69vmGT+DgLSfjusUNF7fglaC9eS/wiugVrBeMMmiQ1MgML/ca1igTrAJKR27HUq94A5oLdg8u+RjALppqzhi0pkVa1NmLpmuOqwtuK5OO8GuolB/EbyLmBjb9jnBueS3APRYD9ndgUCzkM1Ne1Q1nOCljKcEeGE5+7Gat8X7ImLyxAucS0aVBwnevglN4e8gTTZt0NZmV2diVawrFRK9bNn6AMDRtu9WLtG1uKzeJ453wmil0tZbmY+4o97eElkVF/xbqdLmu6J61wezgnXWygO4VQombTtIrT4IYBgpGNs6ktoE4hNKTc4cDPwD27HdH1CL64gAAAAASUVORK5CYII="/>   </span>
+                          <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAAB/UlEQVRIS8WW3VXCMBTH7y2n5fgkLtCkE+gGwgS6gTiBOoE4gWwgTiBMYN3ADZowAT55LMdcTyJgC03a5sghj/m4v/xzcz8QDjTwQFzwBn/N+aW+dDcWU5/Le4GXGe9TQK8aiAoHYSLStnAvcC5YCgjnBoaQRrEc7B38mXHeCSgrgr4VJkeJEG3grRXnMp4A4FUZQs8Rmw/3Bq5Su4aFCk8wEYum8FaKvyQfIdB9lXECfOgyMfp3MGW8t/z1bc9ifBEqTJqqLinWsRmQOtWGSQMQzzYQgn4jNQh/oUX0jgDm+RUG791YzNY2NuB8zodA9NTIuO8mxOsoFpPfKFyNYlLwtVt3rphsSk+9V9UFtSXF69vmGT+DgLSfjusUNF7fglaC9eS/wiugVrBeMMmiQ1MgML/ca1igTrAJKR27HUq94A5oLdg8u+RjALppqzhi0pkVa1NmLpmuOqwtuK5OO8GuolB/EbyLmBjb9jnBueS3APRYD9ndgUCzkM1Ne1Q1nOCljKcEeGE5+7Gat8X7ImLyxAucS0aVBwnevglN4e8gTTZt0NZmV2diVawrFRK9bNn6AMDRtu9WLtG1uKzeJ453wmil0tZbmY+4o97eElkVF/xbqdLmu6J61wezgnXWygO4VQombTtIrT4IYBgpGNs6ktoE4hNKTc4cDPwD27HdH1CL64gAAAAASUVORK5CYII="/>                <span>
+                          <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAAB/UlEQVRIS8WW3VXCMBTH7y2n5fgkLtCkE+gGwgS6gTiBOoE4gWwgTiBMYN3ADZowAT55LMdcTyJgC03a5sghj/m4v/xzcz8QDjTwQFzwBn/N+aW+dDcWU5/Le4GXGe9TQK8aiAoHYSLStnAvcC5YCgjnBoaQRrEc7B38mXHeCSgrgr4VJkeJEG3grRXnMp4A4FUZQs8Rmw/3Bq5Su4aFCk8wEYum8FaKvyQfIdB9lXECfOgyMfp3MGW8t/z1bc9ifBEqTJqqLinWsRmQOtWGSQMQzzYQgn4jNQh/oUX0jgDm+RUG791YzNY2NuB8zodA9NTIuO8mxOsoFpPfKFyNYlLwtVt3rphsSk+9V9UFtSXF69vmGT+DgLSfjusUNF7fglaC9eS/wiugVrBeMMmiQ1MgML/ca1igTrAJKR27HUq94A5oLdg8u+RjALppqzhi0pkVa1NmLpmuOqwtuK5OO8GuolB/EbyLmBjb9jnBueS3APRYD9ndgUCzkM1Ne1Q1nOCljKcEeGE5+7Gat8X7ImLyxAucS0aVBwnevglN4e8gTTZt0NZmV2diVawrFRK9bNn6AMDRtu9WLtG1uKzeJ453wmil0tZbmY+4o97eElkVF/xbqdLmu6J61wezgnXWygO4VQombTtIrT4IYBgpGNs6ktoE4hNKTc4cDPwD27HdH1CL64gAAAAASUVORK5CYII="/>                </span>
+                        <span><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAAB/UlEQVRIS8WW3VXCMBTH7y2n5fgkLtCkE+gGwgS6gTiBOoE4gWwgTiBMYN3ADZowAT55LMdcTyJgC03a5sghj/m4v/xzcz8QDjTwQFzwBn/N+aW+dDcWU5/Le4GXGe9TQK8aiAoHYSLStnAvcC5YCgjnBoaQRrEc7B38mXHeCSgrgr4VJkeJEG3grRXnMp4A4FUZQs8Rmw/3Bq5Su4aFCk8wEYum8FaKvyQfIdB9lXECfOgyMfp3MGW8t/z1bc9ifBEqTJqqLinWsRmQOtWGSQMQzzYQgn4jNQh/oUX0jgDm+RUG791YzNY2NuB8zodA9NTIuO8mxOsoFpPfKFyNYlLwtVt3rphsSk+9V9UFtSXF69vmGT+DgLSfjusUNF7fglaC9eS/wiugVrBeMMmiQ1MgML/ca1igTrAJKR27HUq94A5oLdg8u+RjALppqzhi0pkVa1NmLpmuOqwtuK5OO8GuolB/EbyLmBjb9jnBueS3APRYD9ndgUCzkM1Ne1Q1nOCljKcEeGE5+7Gat8X7ImLyxAucS0aVBwnevglN4e8gTTZt0NZmV2diVawrFRK9bNn6AMDRtu9WLtG1uKzeJ453wmil0tZbmY+4o97eElkVF/xbqdLmu6J61wezgnXWygO4VQombTtIrT4IYBgpGNs6ktoE4hNKTc4cDPwD27HdH1CL64gAAAAASUVORK5CYII="/></span>
+                       <span><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAAClUlEQVRIS8WW4XXaMBDH78zDtJ9KFrDkCZoNmkzQdoLCBCUThEwQNiiZoGSCwgbZAMkTkE99MS+6vpMtIgOysV/z0Bd/sKTf/U93fwnhTAPPxIXO4JdMfuOgB4ladAm+E3i7llcU0R8GosHrfqqWbeGdwLkSS0D4YmEIyzjR1+8O/ruWshfR2ge9Gkw/pkq1gbdWnOtkDoA/qhB6iEU2ejdwVS09FKAiiL7BC0zV5lR4K8UvWk4R6NYVFX9dkRHg3UCo6X8H01oOt8XZDoFgFUt9xRCv0DZ9g+mpqiuKuTcjMp+tEgYgXu4UEFiQ/Yf43fVvnskREP3azUN4ay2iJwSw6TcYPQ0S9ejm7cAHG4RzpmOhpf8714IrWjSmGXEcJ2pedGE5fFPwVK48lVaJMTDfbx0uuigCW9VItMvMrtfLTXyzqaT6MG1vETaq2ZuQr+UlFO42LIq/utdBVZcLWN2n8kRnschu2oDL7P0OQSuprpxZEa0Pn8ciG58CPzVrwT62ZtGjBRDYKgegRjh3BRKx0mLspdcPvNZAbO/2aOngTTdR9fKor49G58q1nAHQT442Frp2fpu5J4CLHkWgx77I7OUfGv75NmWnFly9FPAmFmrG0LJqrVuhwbF7CITmHwu0KXUTALrnhXznfgDYbCNzC4CT6mY065vojn3auVhThmrBW50sCPArAGg0OKLIerKzy+cSXvY7KFYPkZmUazax0BehY2lQLKhcyEZfOJDtLFi9ElqL7CHN96yRa8IGV/cyCYIPerJAPgPg1J21iyPXko+E72Knvnsf+63hqwy9rWxhHagPP4mCir3zPaoy2FKe+roCC4LZtfIIJseuwbpe5n/umowNzEIvkkYDaYJ0/X828D8qC1wuHHGAXwAAAABJRU5ErkJggg=="/>  </span>
+                          </div>
+                              <div class="colors">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                      </div>
+                      <div class="btn__group">
+                        <button>Add To Cart</button>
+                        <button>Rs. 1149</button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </li>
+              <li class="glide__slide">
+                <div class="arrival">
+                  <div class="cart__like">
+                    <div class="image__holder">
+                      <img src="https://i.pinimg.com/originals/ec/69/b5/ec69b5791b56a8efb208d73a2e8a7c37.jpg" alt="" />
+                    </div>
+                    <div class="cart__details">
+                      <h1>Pink Leheria Print Kurti</h1>
+                      <p>
+                        Pink Leheriya print,V-shaped neck, three-quarter bell sleeves,Lace-insert detail and regular length kurti of Woven cotton.  
+                      </p>
+                      <div class="rating">
+                        <span>
+                          <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAAB/UlEQVRIS8WW3VXCMBTH7y2n5fgkLtCkE+gGwgS6gTiBOoE4gWwgTiBMYN3ADZowAT55LMdcTyJgC03a5sghj/m4v/xzcz8QDjTwQFzwBn/N+aW+dDcWU5/Le4GXGe9TQK8aiAoHYSLStnAvcC5YCgjnBoaQRrEc7B38mXHeCSgrgr4VJkeJEG3grRXnMp4A4FUZQs8Rmw/3Bq5Su4aFCk8wEYum8FaKvyQfIdB9lXECfOgyMfp3MGW8t/z1bc9ifBEqTJqqLinWsRmQOtWGSQMQzzYQgn4jNQh/oUX0jgDm+RUG791YzNY2NuB8zodA9NTIuO8mxOsoFpPfKFyNYlLwtVt3rphsSk+9V9UFtSXF69vmGT+DgLSfjusUNF7fglaC9eS/wiugVrBeMMmiQ1MgML/ca1igTrAJKR27HUq94A5oLdg8u+RjALppqzhi0pkVa1NmLpmuOqwtuK5OO8GuolB/EbyLmBjb9jnBueS3APRYD9ndgUCzkM1Ne1Q1nOCljKcEeGE5+7Gat8X7ImLyxAucS0aVBwnevglN4e8gTTZt0NZmV2diVawrFRK9bNn6AMDRtu9WLtG1uKzeJ453wmil0tZbmY+4o97eElkVF/xbqdLmu6J61wezgnXWygO4VQombTtIrT4IYBgpGNs6ktoE4hNKTc4cDPwD27HdH1CL64gAAAAASUVORK5CYII="/>   </span>
+                          <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAAB/UlEQVRIS8WW3VXCMBTH7y2n5fgkLtCkE+gGwgS6gTiBOoE4gWwgTiBMYN3ADZowAT55LMdcTyJgC03a5sghj/m4v/xzcz8QDjTwQFzwBn/N+aW+dDcWU5/Le4GXGe9TQK8aiAoHYSLStnAvcC5YCgjnBoaQRrEc7B38mXHeCSgrgr4VJkeJEG3grRXnMp4A4FUZQs8Rmw/3Bq5Su4aFCk8wEYum8FaKvyQfIdB9lXECfOgyMfp3MGW8t/z1bc9ifBEqTJqqLinWsRmQOtWGSQMQzzYQgn4jNQh/oUX0jgDm+RUG791YzNY2NuB8zodA9NTIuO8mxOsoFpPfKFyNYlLwtVt3rphsSk+9V9UFtSXF69vmGT+DgLSfjusUNF7fglaC9eS/wiugVrBeMMmiQ1MgML/ca1igTrAJKR27HUq94A5oLdg8u+RjALppqzhi0pkVa1NmLpmuOqwtuK5OO8GuolB/EbyLmBjb9jnBueS3APRYD9ndgUCzkM1Ne1Q1nOCljKcEeGE5+7Gat8X7ImLyxAucS0aVBwnevglN4e8gTTZt0NZmV2diVawrFRK9bNn6AMDRtu9WLtG1uKzeJ453wmil0tZbmY+4o97eElkVF/xbqdLmu6J61wezgnXWygO4VQombTtIrT4IYBgpGNs6ktoE4hNKTc4cDPwD27HdH1CL64gAAAAASUVORK5CYII="/>                <span>
+                          <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAAB/UlEQVRIS8WW3VXCMBTH7y2n5fgkLtCkE+gGwgS6gTiBOoE4gWwgTiBMYN3ADZowAT55LMdcTyJgC03a5sghj/m4v/xzcz8QDjTwQFzwBn/N+aW+dDcWU5/Le4GXGe9TQK8aiAoHYSLStnAvcC5YCgjnBoaQRrEc7B38mXHeCSgrgr4VJkeJEG3grRXnMp4A4FUZQs8Rmw/3Bq5Su4aFCk8wEYum8FaKvyQfIdB9lXECfOgyMfp3MGW8t/z1bc9ifBEqTJqqLinWsRmQOtWGSQMQzzYQgn4jNQh/oUX0jgDm+RUG791YzNY2NuB8zodA9NTIuO8mxOsoFpPfKFyNYlLwtVt3rphsSk+9V9UFtSXF69vmGT+DgLSfjusUNF7fglaC9eS/wiugVrBeMMmiQ1MgML/ca1igTrAJKR27HUq94A5oLdg8u+RjALppqzhi0pkVa1NmLpmuOqwtuK5OO8GuolB/EbyLmBjb9jnBueS3APRYD9ndgUCzkM1Ne1Q1nOCljKcEeGE5+7Gat8X7ImLyxAucS0aVBwnevglN4e8gTTZt0NZmV2diVawrFRK9bNn6AMDRtu9WLtG1uKzeJ453wmil0tZbmY+4o97eElkVF/xbqdLmu6J61wezgnXWygO4VQombTtIrT4IYBgpGNs6ktoE4hNKTc4cDPwD27HdH1CL64gAAAAASUVORK5CYII="/>                </span>
+                          <span><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAAClUlEQVRIS8WW4XXaMBDH78zDtJ9KFrDkCZoNmkzQdoLCBCUThEwQNiiZoGSCwgbZAMkTkE99MS+6vpMtIgOysV/z0Bd/sKTf/U93fwnhTAPPxIXO4JdMfuOgB4ladAm+E3i7llcU0R8GosHrfqqWbeGdwLkSS0D4YmEIyzjR1+8O/ruWshfR2ge9Gkw/pkq1gbdWnOtkDoA/qhB6iEU2ejdwVS09FKAiiL7BC0zV5lR4K8UvWk4R6NYVFX9dkRHg3UCo6X8H01oOt8XZDoFgFUt9xRCv0DZ9g+mpqiuKuTcjMp+tEgYgXu4UEFiQ/Yf43fVvnskREP3azUN4ay2iJwSw6TcYPQ0S9ejm7cAHG4RzpmOhpf8714IrWjSmGXEcJ2pedGE5fFPwVK48lVaJMTDfbx0uuigCW9VItMvMrtfLTXyzqaT6MG1vETaq2ZuQr+UlFO42LIq/utdBVZcLWN2n8kRnschu2oDL7P0OQSuprpxZEa0Pn8ciG58CPzVrwT62ZtGjBRDYKgegRjh3BRKx0mLspdcPvNZAbO/2aOngTTdR9fKor49G58q1nAHQT442Frp2fpu5J4CLHkWgx77I7OUfGv75NmWnFly9FPAmFmrG0LJqrVuhwbF7CITmHwu0KXUTALrnhXznfgDYbCNzC4CT6mY065vojn3auVhThmrBW50sCPArAGg0OKLIerKzy+cSXvY7KFYPkZmUazax0BehY2lQLKhcyEZfOJDtLFi9ElqL7CHN96yRa8IGV/cyCYIPerJAPgPg1J21iyPXko+E72Knvnsf+63hqwy9rWxhHagPP4mCir3zPaoy2FKe+roCC4LZtfIIJseuwbpe5n/umowNzEIvkkYDaYJ0/X828D8qC1wuHHGAXwAAAABJRU5ErkJggg=="/>  </span>
+                          <span><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAAClUlEQVRIS8WW4XXaMBDH78zDtJ9KFrDkCZoNmkzQdoLCBCUThEwQNiiZoGSCwgbZAMkTkE99MS+6vpMtIgOysV/z0Bd/sKTf/U93fwnhTAPPxIXO4JdMfuOgB4ladAm+E3i7llcU0R8GosHrfqqWbeGdwLkSS0D4YmEIyzjR1+8O/ruWshfR2ge9Gkw/pkq1gbdWnOtkDoA/qhB6iEU2ejdwVS09FKAiiL7BC0zV5lR4K8UvWk4R6NYVFX9dkRHg3UCo6X8H01oOt8XZDoFgFUt9xRCv0DZ9g+mpqiuKuTcjMp+tEgYgXu4UEFiQ/Yf43fVvnskREP3azUN4ay2iJwSw6TcYPQ0S9ejm7cAHG4RzpmOhpf8714IrWjSmGXEcJ2pedGE5fFPwVK48lVaJMTDfbx0uuigCW9VItMvMrtfLTXyzqaT6MG1vETaq2ZuQr+UlFO42LIq/utdBVZcLWN2n8kRnschu2oDL7P0OQSuprpxZEa0Pn8ciG58CPzVrwT62ZtGjBRDYKgegRjh3BRKx0mLspdcPvNZAbO/2aOngTTdR9fKor49G58q1nAHQT442Frp2fpu5J4CLHkWgx77I7OUfGv75NmWnFly9FPAmFmrG0LJqrVuhwbF7CITmHwu0KXUTALrnhXznfgDYbCNzC4CT6mY065vojn3auVhThmrBW50sCPArAGg0OKLIerKzy+cSXvY7KFYPkZmUazax0BehY2lQLKhcyEZfOJDtLFi9ElqL7CHN96yRa8IGV/cyCYIPerJAPgPg1J21iyPXko+E72Knvnsf+63hqwy9rWxhHagPP4mCir3zPaoy2FKe+roCC4LZtfIIJseuwbpe5n/umowNzEIvkkYDaYJ0/X828D8qC1wuHHGAXwAAAABJRU5ErkJggg=="/>  </span>
+                          </div>
+                              <div class="colors">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                      </div>
+                      <div class="btn__group">
+                        <button>Add To Cart</button>
+                        <button>Rs. 799</button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </li>
+              <li class="glide__slide">
+                <div class="arrival">
+                  <div class="cart__like">
+                    <div class="image__holder">
+                      <img src="http://assets.myntassets.com/v1/images/style/properties/W-Women-Kurtas_fd7db2f14056d0f80bcc5b5b72ce7146_images.jpg" alt="" />
+                    </div>
+                    <div class="cart__details">
+                      <h1>Dark Blue Solid Straight Kurti</h1>
+                      <p>
+                        Dark blue solid straight cotton kurti, has three-quarter sleeves, straight hem,side slits and round neck.
+                      </p>
+                      <div class="rating">
+                        <span>
+                          <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAAB/UlEQVRIS8WW3VXCMBTH7y2n5fgkLtCkE+gGwgS6gTiBOoE4gWwgTiBMYN3ADZowAT55LMdcTyJgC03a5sghj/m4v/xzcz8QDjTwQFzwBn/N+aW+dDcWU5/Le4GXGe9TQK8aiAoHYSLStnAvcC5YCgjnBoaQRrEc7B38mXHeCSgrgr4VJkeJEG3grRXnMp4A4FUZQs8Rmw/3Bq5Su4aFCk8wEYum8FaKvyQfIdB9lXECfOgyMfp3MGW8t/z1bc9ifBEqTJqqLinWsRmQOtWGSQMQzzYQgn4jNQh/oUX0jgDm+RUG791YzNY2NuB8zodA9NTIuO8mxOsoFpPfKFyNYlLwtVt3rphsSk+9V9UFtSXF69vmGT+DgLSfjusUNF7fglaC9eS/wiugVrBeMMmiQ1MgML/ca1igTrAJKR27HUq94A5oLdg8u+RjALppqzhi0pkVa1NmLpmuOqwtuK5OO8GuolB/EbyLmBjb9jnBueS3APRYD9ndgUCzkM1Ne1Q1nOCljKcEeGE5+7Gat8X7ImLyxAucS0aVBwnevglN4e8gTTZt0NZmV2diVawrFRK9bNn6AMDRtu9WLtG1uKzeJ453wmil0tZbmY+4o97eElkVF/xbqdLmu6J61wezgnXWygO4VQombTtIrT4IYBgpGNs6ktoE4hNKTc4cDPwD27HdH1CL64gAAAAASUVORK5CYII="/>   </span>
+                          <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAAB/UlEQVRIS8WW3VXCMBTH7y2n5fgkLtCkE+gGwgS6gTiBOoE4gWwgTiBMYN3ADZowAT55LMdcTyJgC03a5sghj/m4v/xzcz8QDjTwQFzwBn/N+aW+dDcWU5/Le4GXGe9TQK8aiAoHYSLStnAvcC5YCgjnBoaQRrEc7B38mXHeCSgrgr4VJkeJEG3grRXnMp4A4FUZQs8Rmw/3Bq5Su4aFCk8wEYum8FaKvyQfIdB9lXECfOgyMfp3MGW8t/z1bc9ifBEqTJqqLinWsRmQOtWGSQMQzzYQgn4jNQh/oUX0jgDm+RUG791YzNY2NuB8zodA9NTIuO8mxOsoFpPfKFyNYlLwtVt3rphsSk+9V9UFtSXF69vmGT+DgLSfjusUNF7fglaC9eS/wiugVrBeMMmiQ1MgML/ca1igTrAJKR27HUq94A5oLdg8u+RjALppqzhi0pkVa1NmLpmuOqwtuK5OO8GuolB/EbyLmBjb9jnBueS3APRYD9ndgUCzkM1Ne1Q1nOCljKcEeGE5+7Gat8X7ImLyxAucS0aVBwnevglN4e8gTTZt0NZmV2diVawrFRK9bNn6AMDRtu9WLtG1uKzeJ453wmil0tZbmY+4o97eElkVF/xbqdLmu6J61wezgnXWygO4VQombTtIrT4IYBgpGNs6ktoE4hNKTc4cDPwD27HdH1CL64gAAAAASUVORK5CYII="/>                <span>
+                          <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAAB/UlEQVRIS8WW3VXCMBTH7y2n5fgkLtCkE+gGwgS6gTiBOoE4gWwgTiBMYN3ADZowAT55LMdcTyJgC03a5sghj/m4v/xzcz8QDjTwQFzwBn/N+aW+dDcWU5/Le4GXGe9TQK8aiAoHYSLStnAvcC5YCgjnBoaQRrEc7B38mXHeCSgrgr4VJkeJEG3grRXnMp4A4FUZQs8Rmw/3Bq5Su4aFCk8wEYum8FaKvyQfIdB9lXECfOgyMfp3MGW8t/z1bc9ifBEqTJqqLinWsRmQOtWGSQMQzzYQgn4jNQh/oUX0jgDm+RUG791YzNY2NuB8zodA9NTIuO8mxOsoFpPfKFyNYlLwtVt3rphsSk+9V9UFtSXF69vmGT+DgLSfjusUNF7fglaC9eS/wiugVrBeMMmiQ1MgML/ca1igTrAJKR27HUq94A5oLdg8u+RjALppqzhi0pkVa1NmLpmuOqwtuK5OO8GuolB/EbyLmBjb9jnBueS3APRYD9ndgUCzkM1Ne1Q1nOCljKcEeGE5+7Gat8X7ImLyxAucS0aVBwnevglN4e8gTTZt0NZmV2diVawrFRK9bNn6AMDRtu9WLtG1uKzeJ453wmil0tZbmY+4o97eElkVF/xbqdLmu6J61wezgnXWygO4VQombTtIrT4IYBgpGNs6ktoE4hNKTc4cDPwD27HdH1CL64gAAAAASUVORK5CYII="/>                </span>
+                        <span><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAAB/UlEQVRIS8WW3VXCMBTH7y2n5fgkLtCkE+gGwgS6gTiBOoE4gWwgTiBMYN3ADZowAT55LMdcTyJgC03a5sghj/m4v/xzcz8QDjTwQFzwBn/N+aW+dDcWU5/Le4GXGe9TQK8aiAoHYSLStnAvcC5YCgjnBoaQRrEc7B38mXHeCSgrgr4VJkeJEG3grRXnMp4A4FUZQs8Rmw/3Bq5Su4aFCk8wEYum8FaKvyQfIdB9lXECfOgyMfp3MGW8t/z1bc9ifBEqTJqqLinWsRmQOtWGSQMQzzYQgn4jNQh/oUX0jgDm+RUG791YzNY2NuB8zodA9NTIuO8mxOsoFpPfKFyNYlLwtVt3rphsSk+9V9UFtSXF69vmGT+DgLSfjusUNF7fglaC9eS/wiugVrBeMMmiQ1MgML/ca1igTrAJKR27HUq94A5oLdg8u+RjALppqzhi0pkVa1NmLpmuOqwtuK5OO8GuolB/EbyLmBjb9jnBueS3APRYD9ndgUCzkM1Ne1Q1nOCljKcEeGE5+7Gat8X7ImLyxAucS0aVBwnevglN4e8gTTZt0NZmV2diVawrFRK9bNn6AMDRtu9WLtG1uKzeJ453wmil0tZbmY+4o97eElkVF/xbqdLmu6J61wezgnXWygO4VQombTtIrT4IYBgpGNs6ktoE4hNKTc4cDPwD27HdH1CL64gAAAAASUVORK5CYII="/></span>
+                       <span><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAAClUlEQVRIS8WW4XXaMBDH78zDtJ9KFrDkCZoNmkzQdoLCBCUThEwQNiiZoGSCwgbZAMkTkE99MS+6vpMtIgOysV/z0Bd/sKTf/U93fwnhTAPPxIXO4JdMfuOgB4ladAm+E3i7llcU0R8GosHrfqqWbeGdwLkSS0D4YmEIyzjR1+8O/ruWshfR2ge9Gkw/pkq1gbdWnOtkDoA/qhB6iEU2ejdwVS09FKAiiL7BC0zV5lR4K8UvWk4R6NYVFX9dkRHg3UCo6X8H01oOt8XZDoFgFUt9xRCv0DZ9g+mpqiuKuTcjMp+tEgYgXu4UEFiQ/Yf43fVvnskREP3azUN4ay2iJwSw6TcYPQ0S9ejm7cAHG4RzpmOhpf8714IrWjSmGXEcJ2pedGE5fFPwVK48lVaJMTDfbx0uuigCW9VItMvMrtfLTXyzqaT6MG1vETaq2ZuQr+UlFO42LIq/utdBVZcLWN2n8kRnschu2oDL7P0OQSuprpxZEa0Pn8ciG58CPzVrwT62ZtGjBRDYKgegRjh3BRKx0mLspdcPvNZAbO/2aOngTTdR9fKor49G58q1nAHQT442Frp2fpu5J4CLHkWgx77I7OUfGv75NmWnFly9FPAmFmrG0LJqrVuhwbF7CITmHwu0KXUTALrnhXznfgDYbCNzC4CT6mY065vojn3auVhThmrBW50sCPArAGg0OKLIerKzy+cSXvY7KFYPkZmUazax0BehY2lQLKhcyEZfOJDtLFi9ElqL7CHN96yRa8IGV/cyCYIPerJAPgPg1J21iyPXko+E72Knvnsf+63hqwy9rWxhHagPP4mCir3zPaoy2FKe+roCC4LZtfIIJseuwbpe5n/umowNzEIvkkYDaYJ0/X828D8qC1wuHHGAXwAAAABJRU5ErkJggg=="/>  </span>
+                          </div>
+                      <div class="colors">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                      </div>
+                      <div class="btn__group">
+                        <button>Add To Cart</button>
+                        <button>Rs. 649</button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </li>
+            </ul>
+          </div>
+
+          <!-- Arrows -->
+          <div class="glide__arrows" data-glide-el="controls">
+            <button class="glide__arrow glide__arrow--left" data-glide-dir="<">
+              prev
+            </button>
+            <button class="glide__arrow glide__arrow--right" data-glide-dir=">">
+              next
+            </button>
+          <!-- Thumbnails -->
+
+          </div>
+          <div class="glide__bullets" data-glide-el="controls[nav]">
+            <button class="glide__bullet" data-glide-dir="=0">
+              <div class="thumbnail">
+                <img src="https://i.pinimg.com/originals/06/71/d2/0671d2b945696fd4c334fc75450e8c95.jpg" alt="" />
+              </div>
+            </button>
+
+            <button class="glide__bullet" data-glide-dir="=1">
+              <div class="thumbnail">
+                <img src="http://nadiazheng.com/wp-content/uploads/2016/01/Montreal-ecommerce-online-catalogue-women-clothing-studio-fashion-photo-shoot-2.jpg" alt="" />
+              </div>
+            </button>
+
+            <button class="glide__bullet" data-glide-dir="=2">
+              <div class="thumbnail">
+                <img src="https://i.pinimg.com/originals/ec/69/b5/ec69b5791b56a8efb208d73a2e8a7c37.jpg" alt="" />
+              </div>
+            </button>
+
+            <button class="glide__bullet" data-glide-dir="=3">
+              <div class="thumbnail">
+                <img src="http://assets.myntassets.com/v1/images/style/properties/W-Women-Kurtas_fd7db2f14056d0f80bcc5b5b72ce7146_images.jpg" alt="" />
+              </div>
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Special Offer Banner -->
+    <section class="section special__offer">
+      <div class="offer__container">
+        <h1>SPECIAL OFFER</h1>
+        <p>Special Offer Discount is valid for only this Week !</p>
+        <a href="#new__arrival">SHOP NOW</a>
+      </div>
+    </section>
+
+    <!-- Featured Section -->
+    <section class="section featured" id="featured">
+      <div class="featured__container container">
+        <div class="title">
+          <h1 class="primary__title">Featured Products</h1>
+        </div>
+
+        <div class="featured__center">    <!--featured photos dabba-->
+          <div class="product">           <!--each photo dabba-->
+            <div class="img__container">
+              <img src="https://1m19tt3pztls474q6z46fnk9-wpengine.netdna-ssl.com/wp-content/files/2018/10/demo-autotagging@2x-295x600.png" alt="" />
+            </div>
+            <div class="product__bottom">
+                <div class="rating">
+                  <span>
+                    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAAB/UlEQVRIS8WW3VXCMBTH7y2n5fgkLtCkE+gGwgS6gTiBOoE4gWwgTiBMYN3ADZowAT55LMdcTyJgC03a5sghj/m4v/xzcz8QDjTwQFzwBn/N+aW+dDcWU5/Le4GXGe9TQK8aiAoHYSLStnAvcC5YCgjnBoaQRrEc7B38mXHeCSgrgr4VJkeJEG3grRXnMp4A4FUZQs8Rmw/3Bq5Su4aFCk8wEYum8FaKvyQfIdB9lXECfOgyMfp3MGW8t/z1bc9ifBEqTJqqLinWsRmQOtWGSQMQzzYQgn4jNQh/oUX0jgDm+RUG791YzNY2NuB8zodA9NTIuO8mxOsoFpPfKFyNYlLwtVt3rphsSk+9V9UFtSXF69vmGT+DgLSfjusUNF7fglaC9eS/wiugVrBeMMmiQ1MgML/ca1igTrAJKR27HUq94A5oLdg8u+RjALppqzhi0pkVa1NmLpmuOqwtuK5OO8GuolB/EbyLmBjb9jnBueS3APRYD9ndgUCzkM1Ne1Q1nOCljKcEeGE5+7Gat8X7ImLyxAucS0aVBwnevglN4e8gTTZt0NZmV2diVawrFRK9bNn6AMDRtu9WLtG1uKzeJ453wmil0tZbmY+4o97eElkVF/xbqdLmu6J61wezgnXWygO4VQombTtIrT4IYBgpGNs6ktoE4hNKTc4cDPwD27HdH1CL64gAAAAASUVORK5CYII="/>   </span>
+                    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAAB/UlEQVRIS8WW3VXCMBTH7y2n5fgkLtCkE+gGwgS6gTiBOoE4gWwgTiBMYN3ADZowAT55LMdcTyJgC03a5sghj/m4v/xzcz8QDjTwQFzwBn/N+aW+dDcWU5/Le4GXGe9TQK8aiAoHYSLStnAvcC5YCgjnBoaQRrEc7B38mXHeCSgrgr4VJkeJEG3grRXnMp4A4FUZQs8Rmw/3Bq5Su4aFCk8wEYum8FaKvyQfIdB9lXECfOgyMfp3MGW8t/z1bc9ifBEqTJqqLinWsRmQOtWGSQMQzzYQgn4jNQh/oUX0jgDm+RUG791YzNY2NuB8zodA9NTIuO8mxOsoFpPfKFyNYlLwtVt3rphsSk+9V9UFtSXF69vmGT+DgLSfjusUNF7fglaC9eS/wiugVrBeMMmiQ1MgML/ca1igTrAJKR27HUq94A5oLdg8u+RjALppqzhi0pkVa1NmLpmuOqwtuK5OO8GuolB/EbyLmBjb9jnBueS3APRYD9ndgUCzkM1Ne1Q1nOCljKcEeGE5+7Gat8X7ImLyxAucS0aVBwnevglN4e8gTTZt0NZmV2diVawrFRK9bNn6AMDRtu9WLtG1uKzeJ453wmil0tZbmY+4o97eElkVF/xbqdLmu6J61wezgnXWygO4VQombTtIrT4IYBgpGNs6ktoE4hNKTc4cDPwD27HdH1CL64gAAAAASUVORK5CYII="/>                <span>
+                    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAAB/UlEQVRIS8WW3VXCMBTH7y2n5fgkLtCkE+gGwgS6gTiBOoE4gWwgTiBMYN3ADZowAT55LMdcTyJgC03a5sghj/m4v/xzcz8QDjTwQFzwBn/N+aW+dDcWU5/Le4GXGe9TQK8aiAoHYSLStnAvcC5YCgjnBoaQRrEc7B38mXHeCSgrgr4VJkeJEG3grRXnMp4A4FUZQs8Rmw/3Bq5Su4aFCk8wEYum8FaKvyQfIdB9lXECfOgyMfp3MGW8t/z1bc9ifBEqTJqqLinWsRmQOtWGSQMQzzYQgn4jNQh/oUX0jgDm+RUG791YzNY2NuB8zodA9NTIuO8mxOsoFpPfKFyNYlLwtVt3rphsSk+9V9UFtSXF69vmGT+DgLSfjusUNF7fglaC9eS/wiugVrBeMMmiQ1MgML/ca1igTrAJKR27HUq94A5oLdg8u+RjALppqzhi0pkVa1NmLpmuOqwtuK5OO8GuolB/EbyLmBjb9jnBueS3APRYD9ndgUCzkM1Ne1Q1nOCljKcEeGE5+7Gat8X7ImLyxAucS0aVBwnevglN4e8gTTZt0NZmV2diVawrFRK9bNn6AMDRtu9WLtG1uKzeJ453wmil0tZbmY+4o97eElkVF/xbqdLmu6J61wezgnXWygO4VQombTtIrT4IYBgpGNs6ktoE4hNKTc4cDPwD27HdH1CL64gAAAAASUVORK5CYII="/>                </span>
+                  <span><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAAB/UlEQVRIS8WW3VXCMBTH7y2n5fgkLtCkE+gGwgS6gTiBOoE4gWwgTiBMYN3ADZowAT55LMdcTyJgC03a5sghj/m4v/xzcz8QDjTwQFzwBn/N+aW+dDcWU5/Le4GXGe9TQK8aiAoHYSLStnAvcC5YCgjnBoaQRrEc7B38mXHeCSgrgr4VJkeJEG3grRXnMp4A4FUZQs8Rmw/3Bq5Su4aFCk8wEYum8FaKvyQfIdB9lXECfOgyMfp3MGW8t/z1bc9ifBEqTJqqLinWsRmQOtWGSQMQzzYQgn4jNQh/oUX0jgDm+RUG791YzNY2NuB8zodA9NTIuO8mxOsoFpPfKFyNYlLwtVt3rphsSk+9V9UFtSXF69vmGT+DgLSfjusUNF7fglaC9eS/wiugVrBeMMmiQ1MgML/ca1igTrAJKR27HUq94A5oLdg8u+RjALppqzhi0pkVa1NmLpmuOqwtuK5OO8GuolB/EbyLmBjb9jnBueS3APRYD9ndgUCzkM1Ne1Q1nOCljKcEeGE5+7Gat8X7ImLyxAucS0aVBwnevglN4e8gTTZt0NZmV2diVawrFRK9bNn6AMDRtu9WLtG1uKzeJ453wmil0tZbmY+4o97eElkVF/xbqdLmu6J61wezgnXWygO4VQombTtIrT4IYBgpGNs6ktoE4hNKTc4cDPwD27HdH1CL64gAAAAASUVORK5CYII="/></span>
+                 <span><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAAClUlEQVRIS8WW4XXaMBDH78zDtJ9KFrDkCZoNmkzQdoLCBCUThEwQNiiZoGSCwgbZAMkTkE99MS+6vpMtIgOysV/z0Bd/sKTf/U93fwnhTAPPxIXO4JdMfuOgB4ladAm+E3i7llcU0R8GosHrfqqWbeGdwLkSS0D4YmEIyzjR1+8O/ruWshfR2ge9Gkw/pkq1gbdWnOtkDoA/qhB6iEU2ejdwVS09FKAiiL7BC0zV5lR4K8UvWk4R6NYVFX9dkRHg3UCo6X8H01oOt8XZDoFgFUt9xRCv0DZ9g+mpqiuKuTcjMp+tEgYgXu4UEFiQ/Yf43fVvnskREP3azUN4ay2iJwSw6TcYPQ0S9ejm7cAHG4RzpmOhpf8714IrWjSmGXEcJ2pedGE5fFPwVK48lVaJMTDfbx0uuigCW9VItMvMrtfLTXyzqaT6MG1vETaq2ZuQr+UlFO42LIq/utdBVZcLWN2n8kRnschu2oDL7P0OQSuprpxZEa0Pn8ciG58CPzVrwT62ZtGjBRDYKgegRjh3BRKx0mLspdcPvNZAbO/2aOngTTdR9fKor49G58q1nAHQT442Frp2fpu5J4CLHkWgx77I7OUfGv75NmWnFly9FPAmFmrG0LJqrVuhwbF7CITmHwu0KXUTALrnhXznfgDYbCNzC4CT6mY065vojn3auVhThmrBW50sCPArAGg0OKLIerKzy+cSXvY7KFYPkZmUazax0BehY2lQLKhcyEZfOJDtLFi9ElqL7CHN96yRa8IGV/cyCYIPerJAPgPg1J21iyPXko+E72Knvnsf+63hqwy9rWxhHagPP4mCir3zPaoy2FKe+roCC4LZtfIIJseuwbpe5n/umowNzEIvkkYDaYJ0/X828D8qC1wuHHGAXwAAAABJRU5ErkJggg=="/>  </span>
+                    </div>
+        <h3>White Floral Print Midi</h3>
+              <a href="#">Add To Cart</a>
+            </div>
+          </div>
+          <div class="product">
+            <div class="img__container">
+              <img src="https://i.pinimg.com/originals/da/b5/77/dab577f51ad82e88ba38e3d553f08c3a.jpg" alt="" />
+            </div>
+            <div class="product__bottom">
+              <div class="rating">
+                <span>
+                  <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAAB/UlEQVRIS8WW3VXCMBTH7y2n5fgkLtCkE+gGwgS6gTiBOoE4gWwgTiBMYN3ADZowAT55LMdcTyJgC03a5sghj/m4v/xzcz8QDjTwQFzwBn/N+aW+dDcWU5/Le4GXGe9TQK8aiAoHYSLStnAvcC5YCgjnBoaQRrEc7B38mXHeCSgrgr4VJkeJEG3grRXnMp4A4FUZQs8Rmw/3Bq5Su4aFCk8wEYum8FaKvyQfIdB9lXECfOgyMfp3MGW8t/z1bc9ifBEqTJqqLinWsRmQOtWGSQMQzzYQgn4jNQh/oUX0jgDm+RUG791YzNY2NuB8zodA9NTIuO8mxOsoFpPfKFyNYlLwtVt3rphsSk+9V9UFtSXF69vmGT+DgLSfjusUNF7fglaC9eS/wiugVrBeMMmiQ1MgML/ca1igTrAJKR27HUq94A5oLdg8u+RjALppqzhi0pkVa1NmLpmuOqwtuK5OO8GuolB/EbyLmBjb9jnBueS3APRYD9ndgUCzkM1Ne1Q1nOCljKcEeGE5+7Gat8X7ImLyxAucS0aVBwnevglN4e8gTTZt0NZmV2diVawrFRK9bNn6AMDRtu9WLtG1uKzeJ453wmil0tZbmY+4o97eElkVF/xbqdLmu6J61wezgnXWygO4VQombTtIrT4IYBgpGNs6ktoE4hNKTc4cDPwD27HdH1CL64gAAAAASUVORK5CYII="/>   </span>
+                  <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAAB/UlEQVRIS8WW3VXCMBTH7y2n5fgkLtCkE+gGwgS6gTiBOoE4gWwgTiBMYN3ADZowAT55LMdcTyJgC03a5sghj/m4v/xzcz8QDjTwQFzwBn/N+aW+dDcWU5/Le4GXGe9TQK8aiAoHYSLStnAvcC5YCgjnBoaQRrEc7B38mXHeCSgrgr4VJkeJEG3grRXnMp4A4FUZQs8Rmw/3Bq5Su4aFCk8wEYum8FaKvyQfIdB9lXECfOgyMfp3MGW8t/z1bc9ifBEqTJqqLinWsRmQOtWGSQMQzzYQgn4jNQh/oUX0jgDm+RUG791YzNY2NuB8zodA9NTIuO8mxOsoFpPfKFyNYlLwtVt3rphsSk+9V9UFtSXF69vmGT+DgLSfjusUNF7fglaC9eS/wiugVrBeMMmiQ1MgML/ca1igTrAJKR27HUq94A5oLdg8u+RjALppqzhi0pkVa1NmLpmuOqwtuK5OO8GuolB/EbyLmBjb9jnBueS3APRYD9ndgUCzkM1Ne1Q1nOCljKcEeGE5+7Gat8X7ImLyxAucS0aVBwnevglN4e8gTTZt0NZmV2diVawrFRK9bNn6AMDRtu9WLtG1uKzeJ453wmil0tZbmY+4o97eElkVF/xbqdLmu6J61wezgnXWygO4VQombTtIrT4IYBgpGNs6ktoE4hNKTc4cDPwD27HdH1CL64gAAAAASUVORK5CYII="/>                <span>
+                  <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAAB/UlEQVRIS8WW3VXCMBTH7y2n5fgkLtCkE+gGwgS6gTiBOoE4gWwgTiBMYN3ADZowAT55LMdcTyJgC03a5sghj/m4v/xzcz8QDjTwQFzwBn/N+aW+dDcWU5/Le4GXGe9TQK8aiAoHYSLStnAvcC5YCgjnBoaQRrEc7B38mXHeCSgrgr4VJkeJEG3grRXnMp4A4FUZQs8Rmw/3Bq5Su4aFCk8wEYum8FaKvyQfIdB9lXECfOgyMfp3MGW8t/z1bc9ifBEqTJqqLinWsRmQOtWGSQMQzzYQgn4jNQh/oUX0jgDm+RUG791YzNY2NuB8zodA9NTIuO8mxOsoFpPfKFyNYlLwtVt3rphsSk+9V9UFtSXF69vmGT+DgLSfjusUNF7fglaC9eS/wiugVrBeMMmiQ1MgML/ca1igTrAJKR27HUq94A5oLdg8u+RjALppqzhi0pkVa1NmLpmuOqwtuK5OO8GuolB/EbyLmBjb9jnBueS3APRYD9ndgUCzkM1Ne1Q1nOCljKcEeGE5+7Gat8X7ImLyxAucS0aVBwnevglN4e8gTTZt0NZmV2diVawrFRK9bNn6AMDRtu9WLtG1uKzeJ453wmil0tZbmY+4o97eElkVF/xbqdLmu6J61wezgnXWygO4VQombTtIrT4IYBgpGNs6ktoE4hNKTc4cDPwD27HdH1CL64gAAAAASUVORK5CYII="/>                </span>
+                <span><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAAB/UlEQVRIS8WW3VXCMBTH7y2n5fgkLtCkE+gGwgS6gTiBOoE4gWwgTiBMYN3ADZowAT55LMdcTyJgC03a5sghj/m4v/xzcz8QDjTwQFzwBn/N+aW+dDcWU5/Le4GXGe9TQK8aiAoHYSLStnAvcC5YCgjnBoaQRrEc7B38mXHeCSgrgr4VJkeJEG3grRXnMp4A4FUZQs8Rmw/3Bq5Su4aFCk8wEYum8FaKvyQfIdB9lXECfOgyMfp3MGW8t/z1bc9ifBEqTJqqLinWsRmQOtWGSQMQzzYQgn4jNQh/oUX0jgDm+RUG791YzNY2NuB8zodA9NTIuO8mxOsoFpPfKFyNYlLwtVt3rphsSk+9V9UFtSXF69vmGT+DgLSfjusUNF7fglaC9eS/wiugVrBeMMmiQ1MgML/ca1igTrAJKR27HUq94A5oLdg8u+RjALppqzhi0pkVa1NmLpmuOqwtuK5OO8GuolB/EbyLmBjb9jnBueS3APRYD9ndgUCzkM1Ne1Q1nOCljKcEeGE5+7Gat8X7ImLyxAucS0aVBwnevglN4e8gTTZt0NZmV2diVawrFRK9bNn6AMDRtu9WLtG1uKzeJ453wmil0tZbmY+4o97eElkVF/xbqdLmu6J61wezgnXWygO4VQombTtIrT4IYBgpGNs6ktoE4hNKTc4cDPwD27HdH1CL64gAAAAASUVORK5CYII="/></span>
+               <span><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAAClUlEQVRIS8WW4XXaMBDH78zDtJ9KFrDkCZoNmkzQdoLCBCUThEwQNiiZoGSCwgbZAMkTkE99MS+6vpMtIgOysV/z0Bd/sKTf/U93fwnhTAPPxIXO4JdMfuOgB4ladAm+E3i7llcU0R8GosHrfqqWbeGdwLkSS0D4YmEIyzjR1+8O/ruWshfR2ge9Gkw/pkq1gbdWnOtkDoA/qhB6iEU2ejdwVS09FKAiiL7BC0zV5lR4K8UvWk4R6NYVFX9dkRHg3UCo6X8H01oOt8XZDoFgFUt9xRCv0DZ9g+mpqiuKuTcjMp+tEgYgXu4UEFiQ/Yf43fVvnskREP3azUN4ay2iJwSw6TcYPQ0S9ejm7cAHG4RzpmOhpf8714IrWjSmGXEcJ2pedGE5fFPwVK48lVaJMTDfbx0uuigCW9VItMvMrtfLTXyzqaT6MG1vETaq2ZuQr+UlFO42LIq/utdBVZcLWN2n8kRnschu2oDL7P0OQSuprpxZEa0Pn8ciG58CPzVrwT62ZtGjBRDYKgegRjh3BRKx0mLspdcPvNZAbO/2aOngTTdR9fKor49G58q1nAHQT442Frp2fpu5J4CLHkWgx77I7OUfGv75NmWnFly9FPAmFmrG0LJqrVuhwbF7CITmHwu0KXUTALrnhXznfgDYbCNzC4CT6mY065vojn3auVhThmrBW50sCPArAGg0OKLIerKzy+cSXvY7KFYPkZmUazax0BehY2lQLKhcyEZfOJDtLFi9ElqL7CHN96yRa8IGV/cyCYIPerJAPgPg1J21iyPXko+E72Knvnsf+63hqwy9rWxhHagPP4mCir3zPaoy2FKe+roCC4LZtfIIJseuwbpe5n/umowNzEIvkkYDaYJ0/X828D8qC1wuHHGAXwAAAABJRU5ErkJggg=="/>  </span>
+                  </div>
+      <h3> Grey-Blue Denim Jacket</h3>
+              <a href="#">Add To Cart</a>
+            </div>
+          </div>
+          <div class="product">
+            <div class="img__container">
+              <img src="https://i.pinimg.com/originals/cc/b1/f6/ccb1f68747353267a14960baffa10991.jpg" alt="" />
+            </div>
+            <div class="product__bottom">
+              <div class="rating">
+                <span>
+                  <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAAB/UlEQVRIS8WW3VXCMBTH7y2n5fgkLtCkE+gGwgS6gTiBOoE4gWwgTiBMYN3ADZowAT55LMdcTyJgC03a5sghj/m4v/xzcz8QDjTwQFzwBn/N+aW+dDcWU5/Le4GXGe9TQK8aiAoHYSLStnAvcC5YCgjnBoaQRrEc7B38mXHeCSgrgr4VJkeJEG3grRXnMp4A4FUZQs8Rmw/3Bq5Su4aFCk8wEYum8FaKvyQfIdB9lXECfOgyMfp3MGW8t/z1bc9ifBEqTJqqLinWsRmQOtWGSQMQzzYQgn4jNQh/oUX0jgDm+RUG791YzNY2NuB8zodA9NTIuO8mxOsoFpPfKFyNYlLwtVt3rphsSk+9V9UFtSXF69vmGT+DgLSfjusUNF7fglaC9eS/wiugVrBeMMmiQ1MgML/ca1igTrAJKR27HUq94A5oLdg8u+RjALppqzhi0pkVa1NmLpmuOqwtuK5OO8GuolB/EbyLmBjb9jnBueS3APRYD9ndgUCzkM1Ne1Q1nOCljKcEeGE5+7Gat8X7ImLyxAucS0aVBwnevglN4e8gTTZt0NZmV2diVawrFRK9bNn6AMDRtu9WLtG1uKzeJ453wmil0tZbmY+4o97eElkVF/xbqdLmu6J61wezgnXWygO4VQombTtIrT4IYBgpGNs6ktoE4hNKTc4cDPwD27HdH1CL64gAAAAASUVORK5CYII="/>   </span>
+                  <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAAB/UlEQVRIS8WW3VXCMBTH7y2n5fgkLtCkE+gGwgS6gTiBOoE4gWwgTiBMYN3ADZowAT55LMdcTyJgC03a5sghj/m4v/xzcz8QDjTwQFzwBn/N+aW+dDcWU5/Le4GXGe9TQK8aiAoHYSLStnAvcC5YCgjnBoaQRrEc7B38mXHeCSgrgr4VJkeJEG3grRXnMp4A4FUZQs8Rmw/3Bq5Su4aFCk8wEYum8FaKvyQfIdB9lXECfOgyMfp3MGW8t/z1bc9ifBEqTJqqLinWsRmQOtWGSQMQzzYQgn4jNQh/oUX0jgDm+RUG791YzNY2NuB8zodA9NTIuO8mxOsoFpPfKFyNYlLwtVt3rphsSk+9V9UFtSXF69vmGT+DgLSfjusUNF7fglaC9eS/wiugVrBeMMmiQ1MgML/ca1igTrAJKR27HUq94A5oLdg8u+RjALppqzhi0pkVa1NmLpmuOqwtuK5OO8GuolB/EbyLmBjb9jnBueS3APRYD9ndgUCzkM1Ne1Q1nOCljKcEeGE5+7Gat8X7ImLyxAucS0aVBwnevglN4e8gTTZt0NZmV2diVawrFRK9bNn6AMDRtu9WLtG1uKzeJ453wmil0tZbmY+4o97eElkVF/xbqdLmu6J61wezgnXWygO4VQombTtIrT4IYBgpGNs6ktoE4hNKTc4cDPwD27HdH1CL64gAAAAASUVORK5CYII="/>                <span>
+                  <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAAB/UlEQVRIS8WW3VXCMBTH7y2n5fgkLtCkE+gGwgS6gTiBOoE4gWwgTiBMYN3ADZowAT55LMdcTyJgC03a5sghj/m4v/xzcz8QDjTwQFzwBn/N+aW+dDcWU5/Le4GXGe9TQK8aiAoHYSLStnAvcC5YCgjnBoaQRrEc7B38mXHeCSgrgr4VJkeJEG3grRXnMp4A4FUZQs8Rmw/3Bq5Su4aFCk8wEYum8FaKvyQfIdB9lXECfOgyMfp3MGW8t/z1bc9ifBEqTJqqLinWsRmQOtWGSQMQzzYQgn4jNQh/oUX0jgDm+RUG791YzNY2NuB8zodA9NTIuO8mxOsoFpPfKFyNYlLwtVt3rphsSk+9V9UFtSXF69vmGT+DgLSfjusUNF7fglaC9eS/wiugVrBeMMmiQ1MgML/ca1igTrAJKR27HUq94A5oLdg8u+RjALppqzhi0pkVa1NmLpmuOqwtuK5OO8GuolB/EbyLmBjb9jnBueS3APRYD9ndgUCzkM1Ne1Q1nOCljKcEeGE5+7Gat8X7ImLyxAucS0aVBwnevglN4e8gTTZt0NZmV2diVawrFRK9bNn6AMDRtu9WLtG1uKzeJ453wmil0tZbmY+4o97eElkVF/xbqdLmu6J61wezgnXWygO4VQombTtIrT4IYBgpGNs6ktoE4hNKTc4cDPwD27HdH1CL64gAAAAASUVORK5CYII="/>                </span>
+                <span><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAAB/UlEQVRIS8WW3VXCMBTH7y2n5fgkLtCkE+gGwgS6gTiBOoE4gWwgTiBMYN3ADZowAT55LMdcTyJgC03a5sghj/m4v/xzcz8QDjTwQFzwBn/N+aW+dDcWU5/Le4GXGe9TQK8aiAoHYSLStnAvcC5YCgjnBoaQRrEc7B38mXHeCSgrgr4VJkeJEG3grRXnMp4A4FUZQs8Rmw/3Bq5Su4aFCk8wEYum8FaKvyQfIdB9lXECfOgyMfp3MGW8t/z1bc9ifBEqTJqqLinWsRmQOtWGSQMQzzYQgn4jNQh/oUX0jgDm+RUG791YzNY2NuB8zodA9NTIuO8mxOsoFpPfKFyNYlLwtVt3rphsSk+9V9UFtSXF69vmGT+DgLSfjusUNF7fglaC9eS/wiugVrBeMMmiQ1MgML/ca1igTrAJKR27HUq94A5oLdg8u+RjALppqzhi0pkVa1NmLpmuOqwtuK5OO8GuolB/EbyLmBjb9jnBueS3APRYD9ndgUCzkM1Ne1Q1nOCljKcEeGE5+7Gat8X7ImLyxAucS0aVBwnevglN4e8gTTZt0NZmV2diVawrFRK9bNn6AMDRtu9WLtG1uKzeJ453wmil0tZbmY+4o97eElkVF/xbqdLmu6J61wezgnXWygO4VQombTtIrT4IYBgpGNs6ktoE4hNKTc4cDPwD27HdH1CL64gAAAAASUVORK5CYII="/></span>
+               <span><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAAClUlEQVRIS8WW4XXaMBDH78zDtJ9KFrDkCZoNmkzQdoLCBCUThEwQNiiZoGSCwgbZAMkTkE99MS+6vpMtIgOysV/z0Bd/sKTf/U93fwnhTAPPxIXO4JdMfuOgB4ladAm+E3i7llcU0R8GosHrfqqWbeGdwLkSS0D4YmEIyzjR1+8O/ruWshfR2ge9Gkw/pkq1gbdWnOtkDoA/qhB6iEU2ejdwVS09FKAiiL7BC0zV5lR4K8UvWk4R6NYVFX9dkRHg3UCo6X8H01oOt8XZDoFgFUt9xRCv0DZ9g+mpqiuKuTcjMp+tEgYgXu4UEFiQ/Yf43fVvnskREP3azUN4ay2iJwSw6TcYPQ0S9ejm7cAHG4RzpmOhpf8714IrWjSmGXEcJ2pedGE5fFPwVK48lVaJMTDfbx0uuigCW9VItMvMrtfLTXyzqaT6MG1vETaq2ZuQr+UlFO42LIq/utdBVZcLWN2n8kRnschu2oDL7P0OQSuprpxZEa0Pn8ciG58CPzVrwT62ZtGjBRDYKgegRjh3BRKx0mLspdcPvNZAbO/2aOngTTdR9fKor49G58q1nAHQT442Frp2fpu5J4CLHkWgx77I7OUfGv75NmWnFly9FPAmFmrG0LJqrVuhwbF7CITmHwu0KXUTALrnhXznfgDYbCNzC4CT6mY065vojn3auVhThmrBW50sCPArAGg0OKLIerKzy+cSXvY7KFYPkZmUazax0BehY2lQLKhcyEZfOJDtLFi9ElqL7CHN96yRa8IGV/cyCYIPerJAPgPg1J21iyPXko+E72Knvnsf+63hqwy9rWxhHagPP4mCir3zPaoy2FKe+roCC4LZtfIIJseuwbpe5n/umowNzEIvkkYDaYJ0/X828D8qC1wuHHGAXwAAAABJRU5ErkJggg=="/>  </span>
+                  </div>
+       <h3>White & Yellow Palazzo Suit </h3>
+              <a href="#">Add To Cart</a>
+            </div>
+          </div>
+          <div class="product">
+            <div class="img__container">
+              <img src="https://spaceandlight.la/wp-content/uploads/2017/12/16.jpg" alt="" />
+            </div>
+            <div class="product__bottom">
+              <div class="rating">
+                <span>
+                  <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAAB/UlEQVRIS8WW3VXCMBTH7y2n5fgkLtCkE+gGwgS6gTiBOoE4gWwgTiBMYN3ADZowAT55LMdcTyJgC03a5sghj/m4v/xzcz8QDjTwQFzwBn/N+aW+dDcWU5/Le4GXGe9TQK8aiAoHYSLStnAvcC5YCgjnBoaQRrEc7B38mXHeCSgrgr4VJkeJEG3grRXnMp4A4FUZQs8Rmw/3Bq5Su4aFCk8wEYum8FaKvyQfIdB9lXECfOgyMfp3MGW8t/z1bc9ifBEqTJqqLinWsRmQOtWGSQMQzzYQgn4jNQh/oUX0jgDm+RUG791YzNY2NuB8zodA9NTIuO8mxOsoFpPfKFyNYlLwtVt3rphsSk+9V9UFtSXF69vmGT+DgLSfjusUNF7fglaC9eS/wiugVrBeMMmiQ1MgML/ca1igTrAJKR27HUq94A5oLdg8u+RjALppqzhi0pkVa1NmLpmuOqwtuK5OO8GuolB/EbyLmBjb9jnBueS3APRYD9ndgUCzkM1Ne1Q1nOCljKcEeGE5+7Gat8X7ImLyxAucS0aVBwnevglN4e8gTTZt0NZmV2diVawrFRK9bNn6AMDRtu9WLtG1uKzeJ453wmil0tZbmY+4o97eElkVF/xbqdLmu6J61wezgnXWygO4VQombTtIrT4IYBgpGNs6ktoE4hNKTc4cDPwD27HdH1CL64gAAAAASUVORK5CYII="/>   </span>
+                  <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAAB/UlEQVRIS8WW3VXCMBTH7y2n5fgkLtCkE+gGwgS6gTiBOoE4gWwgTiBMYN3ADZowAT55LMdcTyJgC03a5sghj/m4v/xzcz8QDjTwQFzwBn/N+aW+dDcWU5/Le4GXGe9TQK8aiAoHYSLStnAvcC5YCgjnBoaQRrEc7B38mXHeCSgrgr4VJkeJEG3grRXnMp4A4FUZQs8Rmw/3Bq5Su4aFCk8wEYum8FaKvyQfIdB9lXECfOgyMfp3MGW8t/z1bc9ifBEqTJqqLinWsRmQOtWGSQMQzzYQgn4jNQh/oUX0jgDm+RUG791YzNY2NuB8zodA9NTIuO8mxOsoFpPfKFyNYlLwtVt3rphsSk+9V9UFtSXF69vmGT+DgLSfjusUNF7fglaC9eS/wiugVrBeMMmiQ1MgML/ca1igTrAJKR27HUq94A5oLdg8u+RjALppqzhi0pkVa1NmLpmuOqwtuK5OO8GuolB/EbyLmBjb9jnBueS3APRYD9ndgUCzkM1Ne1Q1nOCljKcEeGE5+7Gat8X7ImLyxAucS0aVBwnevglN4e8gTTZt0NZmV2diVawrFRK9bNn6AMDRtu9WLtG1uKzeJ453wmil0tZbmY+4o97eElkVF/xbqdLmu6J61wezgnXWygO4VQombTtIrT4IYBgpGNs6ktoE4hNKTc4cDPwD27HdH1CL64gAAAAASUVORK5CYII="/>                <span>
+                  <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAAB/UlEQVRIS8WW3VXCMBTH7y2n5fgkLtCkE+gGwgS6gTiBOoE4gWwgTiBMYN3ADZowAT55LMdcTyJgC03a5sghj/m4v/xzcz8QDjTwQFzwBn/N+aW+dDcWU5/Le4GXGe9TQK8aiAoHYSLStnAvcC5YCgjnBoaQRrEc7B38mXHeCSgrgr4VJkeJEG3grRXnMp4A4FUZQs8Rmw/3Bq5Su4aFCk8wEYum8FaKvyQfIdB9lXECfOgyMfp3MGW8t/z1bc9ifBEqTJqqLinWsRmQOtWGSQMQzzYQgn4jNQh/oUX0jgDm+RUG791YzNY2NuB8zodA9NTIuO8mxOsoFpPfKFyNYlLwtVt3rphsSk+9V9UFtSXF69vmGT+DgLSfjusUNF7fglaC9eS/wiugVrBeMMmiQ1MgML/ca1igTrAJKR27HUq94A5oLdg8u+RjALppqzhi0pkVa1NmLpmuOqwtuK5OO8GuolB/EbyLmBjb9jnBueS3APRYD9ndgUCzkM1Ne1Q1nOCljKcEeGE5+7Gat8X7ImLyxAucS0aVBwnevglN4e8gTTZt0NZmV2diVawrFRK9bNn6AMDRtu9WLtG1uKzeJ453wmil0tZbmY+4o97eElkVF/xbqdLmu6J61wezgnXWygO4VQombTtIrT4IYBgpGNs6ktoE4hNKTc4cDPwD27HdH1CL64gAAAAASUVORK5CYII="/>                </span>
+                <span><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAAB/UlEQVRIS8WW3VXCMBTH7y2n5fgkLtCkE+gGwgS6gTiBOoE4gWwgTiBMYN3ADZowAT55LMdcTyJgC03a5sghj/m4v/xzcz8QDjTwQFzwBn/N+aW+dDcWU5/Le4GXGe9TQK8aiAoHYSLStnAvcC5YCgjnBoaQRrEc7B38mXHeCSgrgr4VJkeJEG3grRXnMp4A4FUZQs8Rmw/3Bq5Su4aFCk8wEYum8FaKvyQfIdB9lXECfOgyMfp3MGW8t/z1bc9ifBEqTJqqLinWsRmQOtWGSQMQzzYQgn4jNQh/oUX0jgDm+RUG791YzNY2NuB8zodA9NTIuO8mxOsoFpPfKFyNYlLwtVt3rphsSk+9V9UFtSXF69vmGT+DgLSfjusUNF7fglaC9eS/wiugVrBeMMmiQ1MgML/ca1igTrAJKR27HUq94A5oLdg8u+RjALppqzhi0pkVa1NmLpmuOqwtuK5OO8GuolB/EbyLmBjb9jnBueS3APRYD9ndgUCzkM1Ne1Q1nOCljKcEeGE5+7Gat8X7ImLyxAucS0aVBwnevglN4e8gTTZt0NZmV2diVawrFRK9bNn6AMDRtu9WLtG1uKzeJ453wmil0tZbmY+4o97eElkVF/xbqdLmu6J61wezgnXWygO4VQombTtIrT4IYBgpGNs6ktoE4hNKTc4cDPwD27HdH1CL64gAAAAASUVORK5CYII="/></span>
+               <span><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAAClUlEQVRIS8WW4XXaMBDH78zDtJ9KFrDkCZoNmkzQdoLCBCUThEwQNiiZoGSCwgbZAMkTkE99MS+6vpMtIgOysV/z0Bd/sKTf/U93fwnhTAPPxIXO4JdMfuOgB4ladAm+E3i7llcU0R8GosHrfqqWbeGdwLkSS0D4YmEIyzjR1+8O/ruWshfR2ge9Gkw/pkq1gbdWnOtkDoA/qhB6iEU2ejdwVS09FKAiiL7BC0zV5lR4K8UvWk4R6NYVFX9dkRHg3UCo6X8H01oOt8XZDoFgFUt9xRCv0DZ9g+mpqiuKuTcjMp+tEgYgXu4UEFiQ/Yf43fVvnskREP3azUN4ay2iJwSw6TcYPQ0S9ejm7cAHG4RzpmOhpf8714IrWjSmGXEcJ2pedGE5fFPwVK48lVaJMTDfbx0uuigCW9VItMvMrtfLTXyzqaT6MG1vETaq2ZuQr+UlFO42LIq/utdBVZcLWN2n8kRnschu2oDL7P0OQSuprpxZEa0Pn8ciG58CPzVrwT62ZtGjBRDYKgegRjh3BRKx0mLspdcPvNZAbO/2aOngTTdR9fKor49G58q1nAHQT442Frp2fpu5J4CLHkWgx77I7OUfGv75NmWnFly9FPAmFmrG0LJqrVuhwbF7CITmHwu0KXUTALrnhXznfgDYbCNzC4CT6mY065vojn3auVhThmrBW50sCPArAGg0OKLIerKzy+cSXvY7KFYPkZmUazax0BehY2lQLKhcyEZfOJDtLFi9ElqL7CHN96yRa8IGV/cyCYIPerJAPgPg1J21iyPXko+E72Knvnsf+63hqwy9rWxhHagPP4mCir3zPaoy2FKe+roCC4LZtfIIJseuwbpe5n/umowNzEIvkkYDaYJ0/X828D8qC1wuHHGAXwAAAABJRU5ErkJggg=="/>  </span>
+                  </div>
+
+              <h3>Black Straight Fit Jeans</h3>
+              <a href="#">Add To Cart</a>
+            </div>
+          </div>
+          <div class="product">
+            <div class="img__container">
+              <img src="https://images-in.girlstyle.com/wp-content/uploads/2019/06/a126d41b-8592-4a93-a79b-b1189722a5821562142091879-1.jpg" alt="" />
+            </div>
+            <div class="product__bottom">
+              <div class="rating">
+                <span>
+                  <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAAB/UlEQVRIS8WW3VXCMBTH7y2n5fgkLtCkE+gGwgS6gTiBOoE4gWwgTiBMYN3ADZowAT55LMdcTyJgC03a5sghj/m4v/xzcz8QDjTwQFzwBn/N+aW+dDcWU5/Le4GXGe9TQK8aiAoHYSLStnAvcC5YCgjnBoaQRrEc7B38mXHeCSgrgr4VJkeJEG3grRXnMp4A4FUZQs8Rmw/3Bq5Su4aFCk8wEYum8FaKvyQfIdB9lXECfOgyMfp3MGW8t/z1bc9ifBEqTJqqLinWsRmQOtWGSQMQzzYQgn4jNQh/oUX0jgDm+RUG791YzNY2NuB8zodA9NTIuO8mxOsoFpPfKFyNYlLwtVt3rphsSk+9V9UFtSXF69vmGT+DgLSfjusUNF7fglaC9eS/wiugVrBeMMmiQ1MgML/ca1igTrAJKR27HUq94A5oLdg8u+RjALppqzhi0pkVa1NmLpmuOqwtuK5OO8GuolB/EbyLmBjb9jnBueS3APRYD9ndgUCzkM1Ne1Q1nOCljKcEeGE5+7Gat8X7ImLyxAucS0aVBwnevglN4e8gTTZt0NZmV2diVawrFRK9bNn6AMDRtu9WLtG1uKzeJ453wmil0tZbmY+4o97eElkVF/xbqdLmu6J61wezgnXWygO4VQombTtIrT4IYBgpGNs6ktoE4hNKTc4cDPwD27HdH1CL64gAAAAASUVORK5CYII="/>   </span>
+                  <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAAB/UlEQVRIS8WW3VXCMBTH7y2n5fgkLtCkE+gGwgS6gTiBOoE4gWwgTiBMYN3ADZowAT55LMdcTyJgC03a5sghj/m4v/xzcz8QDjTwQFzwBn/N+aW+dDcWU5/Le4GXGe9TQK8aiAoHYSLStnAvcC5YCgjnBoaQRrEc7B38mXHeCSgrgr4VJkeJEG3grRXnMp4A4FUZQs8Rmw/3Bq5Su4aFCk8wEYum8FaKvyQfIdB9lXECfOgyMfp3MGW8t/z1bc9ifBEqTJqqLinWsRmQOtWGSQMQzzYQgn4jNQh/oUX0jgDm+RUG791YzNY2NuB8zodA9NTIuO8mxOsoFpPfKFyNYlLwtVt3rphsSk+9V9UFtSXF69vmGT+DgLSfjusUNF7fglaC9eS/wiugVrBeMMmiQ1MgML/ca1igTrAJKR27HUq94A5oLdg8u+RjALppqzhi0pkVa1NmLpmuOqwtuK5OO8GuolB/EbyLmBjb9jnBueS3APRYD9ndgUCzkM1Ne1Q1nOCljKcEeGE5+7Gat8X7ImLyxAucS0aVBwnevglN4e8gTTZt0NZmV2diVawrFRK9bNn6AMDRtu9WLtG1uKzeJ453wmil0tZbmY+4o97eElkVF/xbqdLmu6J61wezgnXWygO4VQombTtIrT4IYBgpGNs6ktoE4hNKTc4cDPwD27HdH1CL64gAAAAASUVORK5CYII="/>                <span>
+                  <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAAB/UlEQVRIS8WW3VXCMBTH7y2n5fgkLtCkE+gGwgS6gTiBOoE4gWwgTiBMYN3ADZowAT55LMdcTyJgC03a5sghj/m4v/xzcz8QDjTwQFzwBn/N+aW+dDcWU5/Le4GXGe9TQK8aiAoHYSLStnAvcC5YCgjnBoaQRrEc7B38mXHeCSgrgr4VJkeJEG3grRXnMp4A4FUZQs8Rmw/3Bq5Su4aFCk8wEYum8FaKvyQfIdB9lXECfOgyMfp3MGW8t/z1bc9ifBEqTJqqLinWsRmQOtWGSQMQzzYQgn4jNQh/oUX0jgDm+RUG791YzNY2NuB8zodA9NTIuO8mxOsoFpPfKFyNYlLwtVt3rphsSk+9V9UFtSXF69vmGT+DgLSfjusUNF7fglaC9eS/wiugVrBeMMmiQ1MgML/ca1igTrAJKR27HUq94A5oLdg8u+RjALppqzhi0pkVa1NmLpmuOqwtuK5OO8GuolB/EbyLmBjb9jnBueS3APRYD9ndgUCzkM1Ne1Q1nOCljKcEeGE5+7Gat8X7ImLyxAucS0aVBwnevglN4e8gTTZt0NZmV2diVawrFRK9bNn6AMDRtu9WLtG1uKzeJ453wmil0tZbmY+4o97eElkVF/xbqdLmu6J61wezgnXWygO4VQombTtIrT4IYBgpGNs6ktoE4hNKTc4cDPwD27HdH1CL64gAAAAASUVORK5CYII="/>                </span>
+                <span><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAAB/UlEQVRIS8WW3VXCMBTH7y2n5fgkLtCkE+gGwgS6gTiBOoE4gWwgTiBMYN3ADZowAT55LMdcTyJgC03a5sghj/m4v/xzcz8QDjTwQFzwBn/N+aW+dDcWU5/Le4GXGe9TQK8aiAoHYSLStnAvcC5YCgjnBoaQRrEc7B38mXHeCSgrgr4VJkeJEG3grRXnMp4A4FUZQs8Rmw/3Bq5Su4aFCk8wEYum8FaKvyQfIdB9lXECfOgyMfp3MGW8t/z1bc9ifBEqTJqqLinWsRmQOtWGSQMQzzYQgn4jNQh/oUX0jgDm+RUG791YzNY2NuB8zodA9NTIuO8mxOsoFpPfKFyNYlLwtVt3rphsSk+9V9UFtSXF69vmGT+DgLSfjusUNF7fglaC9eS/wiugVrBeMMmiQ1MgML/ca1igTrAJKR27HUq94A5oLdg8u+RjALppqzhi0pkVa1NmLpmuOqwtuK5OO8GuolB/EbyLmBjb9jnBueS3APRYD9ndgUCzkM1Ne1Q1nOCljKcEeGE5+7Gat8X7ImLyxAucS0aVBwnevglN4e8gTTZt0NZmV2diVawrFRK9bNn6AMDRtu9WLtG1uKzeJ453wmil0tZbmY+4o97eElkVF/xbqdLmu6J61wezgnXWygO4VQombTtIrT4IYBgpGNs6ktoE4hNKTc4cDPwD27HdH1CL64gAAAAASUVORK5CYII="/></span>
+               <span><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAAClUlEQVRIS8WW4XXaMBDH78zDtJ9KFrDkCZoNmkzQdoLCBCUThEwQNiiZoGSCwgbZAMkTkE99MS+6vpMtIgOysV/z0Bd/sKTf/U93fwnhTAPPxIXO4JdMfuOgB4ladAm+E3i7llcU0R8GosHrfqqWbeGdwLkSS0D4YmEIyzjR1+8O/ruWshfR2ge9Gkw/pkq1gbdWnOtkDoA/qhB6iEU2ejdwVS09FKAiiL7BC0zV5lR4K8UvWk4R6NYVFX9dkRHg3UCo6X8H01oOt8XZDoFgFUt9xRCv0DZ9g+mpqiuKuTcjMp+tEgYgXu4UEFiQ/Yf43fVvnskREP3azUN4ay2iJwSw6TcYPQ0S9ejm7cAHG4RzpmOhpf8714IrWjSmGXEcJ2pedGE5fFPwVK48lVaJMTDfbx0uuigCW9VItMvMrtfLTXyzqaT6MG1vETaq2ZuQr+UlFO42LIq/utdBVZcLWN2n8kRnschu2oDL7P0OQSuprpxZEa0Pn8ciG58CPzVrwT62ZtGjBRDYKgegRjh3BRKx0mLspdcPvNZAbO/2aOngTTdR9fKor49G58q1nAHQT442Frp2fpu5J4CLHkWgx77I7OUfGv75NmWnFly9FPAmFmrG0LJqrVuhwbF7CITmHwu0KXUTALrnhXznfgDYbCNzC4CT6mY065vojn3auVhThmrBW50sCPArAGg0OKLIerKzy+cSXvY7KFYPkZmUazax0BehY2lQLKhcyEZfOJDtLFi9ElqL7CHN96yRa8IGV/cyCYIPerJAPgPg1J21iyPXko+E72Knvnsf+63hqwy9rWxhHagPP4mCir3zPaoy2FKe+roCC4LZtfIIJseuwbpe5n/umowNzEIvkkYDaYJ0/X828D8qC1wuHHGAXwAAAABJRU5ErkJggg=="/>  </span>
+                  </div>
+
+              <h3>Black Sharara-Suit & Dupatta </h3>
+              <a href="#">Add To Cart</a>
+            </div>
+          </div>
+          <div class="product">
+            <div class="img__container">
+              <img src="https://i.pinimg.com/originals/ea/c9/0d/eac90d513d0e909093037ba873f019e9.jpg" alt="" />
+
+            </div>
+            <div class="product__bottom">
+              <div class="rating">
+                <span>
+                  <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAAB/UlEQVRIS8WW3VXCMBTH7y2n5fgkLtCkE+gGwgS6gTiBOoE4gWwgTiBMYN3ADZowAT55LMdcTyJgC03a5sghj/m4v/xzcz8QDjTwQFzwBn/N+aW+dDcWU5/Le4GXGe9TQK8aiAoHYSLStnAvcC5YCgjnBoaQRrEc7B38mXHeCSgrgr4VJkeJEG3grRXnMp4A4FUZQs8Rmw/3Bq5Su4aFCk8wEYum8FaKvyQfIdB9lXECfOgyMfp3MGW8t/z1bc9ifBEqTJqqLinWsRmQOtWGSQMQzzYQgn4jNQh/oUX0jgDm+RUG791YzNY2NuB8zodA9NTIuO8mxOsoFpPfKFyNYlLwtVt3rphsSk+9V9UFtSXF69vmGT+DgLSfjusUNF7fglaC9eS/wiugVrBeMMmiQ1MgML/ca1igTrAJKR27HUq94A5oLdg8u+RjALppqzhi0pkVa1NmLpmuOqwtuK5OO8GuolB/EbyLmBjb9jnBueS3APRYD9ndgUCzkM1Ne1Q1nOCljKcEeGE5+7Gat8X7ImLyxAucS0aVBwnevglN4e8gTTZt0NZmV2diVawrFRK9bNn6AMDRtu9WLtG1uKzeJ453wmil0tZbmY+4o97eElkVF/xbqdLmu6J61wezgnXWygO4VQombTtIrT4IYBgpGNs6ktoE4hNKTc4cDPwD27HdH1CL64gAAAAASUVORK5CYII="/>   </span>
+                  <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAAB/UlEQVRIS8WW3VXCMBTH7y2n5fgkLtCkE+gGwgS6gTiBOoE4gWwgTiBMYN3ADZowAT55LMdcTyJgC03a5sghj/m4v/xzcz8QDjTwQFzwBn/N+aW+dDcWU5/Le4GXGe9TQK8aiAoHYSLStnAvcC5YCgjnBoaQRrEc7B38mXHeCSgrgr4VJkeJEG3grRXnMp4A4FUZQs8Rmw/3Bq5Su4aFCk8wEYum8FaKvyQfIdB9lXECfOgyMfp3MGW8t/z1bc9ifBEqTJqqLinWsRmQOtWGSQMQzzYQgn4jNQh/oUX0jgDm+RUG791YzNY2NuB8zodA9NTIuO8mxOsoFpPfKFyNYlLwtVt3rphsSk+9V9UFtSXF69vmGT+DgLSfjusUNF7fglaC9eS/wiugVrBeMMmiQ1MgML/ca1igTrAJKR27HUq94A5oLdg8u+RjALppqzhi0pkVa1NmLpmuOqwtuK5OO8GuolB/EbyLmBjb9jnBueS3APRYD9ndgUCzkM1Ne1Q1nOCljKcEeGE5+7Gat8X7ImLyxAucS0aVBwnevglN4e8gTTZt0NZmV2diVawrFRK9bNn6AMDRtu9WLtG1uKzeJ453wmil0tZbmY+4o97eElkVF/xbqdLmu6J61wezgnXWygO4VQombTtIrT4IYBgpGNs6ktoE4hNKTc4cDPwD27HdH1CL64gAAAAASUVORK5CYII="/>                <span>
+                  <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAAB/UlEQVRIS8WW3VXCMBTH7y2n5fgkLtCkE+gGwgS6gTiBOoE4gWwgTiBMYN3ADZowAT55LMdcTyJgC03a5sghj/m4v/xzcz8QDjTwQFzwBn/N+aW+dDcWU5/Le4GXGe9TQK8aiAoHYSLStnAvcC5YCgjnBoaQRrEc7B38mXHeCSgrgr4VJkeJEG3grRXnMp4A4FUZQs8Rmw/3Bq5Su4aFCk8wEYum8FaKvyQfIdB9lXECfOgyMfp3MGW8t/z1bc9ifBEqTJqqLinWsRmQOtWGSQMQzzYQgn4jNQh/oUX0jgDm+RUG791YzNY2NuB8zodA9NTIuO8mxOsoFpPfKFyNYlLwtVt3rphsSk+9V9UFtSXF69vmGT+DgLSfjusUNF7fglaC9eS/wiugVrBeMMmiQ1MgML/ca1igTrAJKR27HUq94A5oLdg8u+RjALppqzhi0pkVa1NmLpmuOqwtuK5OO8GuolB/EbyLmBjb9jnBueS3APRYD9ndgUCzkM1Ne1Q1nOCljKcEeGE5+7Gat8X7ImLyxAucS0aVBwnevglN4e8gTTZt0NZmV2diVawrFRK9bNn6AMDRtu9WLtG1uKzeJ453wmil0tZbmY+4o97eElkVF/xbqdLmu6J61wezgnXWygO4VQombTtIrT4IYBgpGNs6ktoE4hNKTc4cDPwD27HdH1CL64gAAAAASUVORK5CYII="/>                </span>
+                <span><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAAB/UlEQVRIS8WW3VXCMBTH7y2n5fgkLtCkE+gGwgS6gTiBOoE4gWwgTiBMYN3ADZowAT55LMdcTyJgC03a5sghj/m4v/xzcz8QDjTwQFzwBn/N+aW+dDcWU5/Le4GXGe9TQK8aiAoHYSLStnAvcC5YCgjnBoaQRrEc7B38mXHeCSgrgr4VJkeJEG3grRXnMp4A4FUZQs8Rmw/3Bq5Su4aFCk8wEYum8FaKvyQfIdB9lXECfOgyMfp3MGW8t/z1bc9ifBEqTJqqLinWsRmQOtWGSQMQzzYQgn4jNQh/oUX0jgDm+RUG791YzNY2NuB8zodA9NTIuO8mxOsoFpPfKFyNYlLwtVt3rphsSk+9V9UFtSXF69vmGT+DgLSfjusUNF7fglaC9eS/wiugVrBeMMmiQ1MgML/ca1igTrAJKR27HUq94A5oLdg8u+RjALppqzhi0pkVa1NmLpmuOqwtuK5OO8GuolB/EbyLmBjb9jnBueS3APRYD9ndgUCzkM1Ne1Q1nOCljKcEeGE5+7Gat8X7ImLyxAucS0aVBwnevglN4e8gTTZt0NZmV2diVawrFRK9bNn6AMDRtu9WLtG1uKzeJ453wmil0tZbmY+4o97eElkVF/xbqdLmu6J61wezgnXWygO4VQombTtIrT4IYBgpGNs6ktoE4hNKTc4cDPwD27HdH1CL64gAAAAASUVORK5CYII="/></span>
+               <span><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAAClUlEQVRIS8WW4XXaMBDH78zDtJ9KFrDkCZoNmkzQdoLCBCUThEwQNiiZoGSCwgbZAMkTkE99MS+6vpMtIgOysV/z0Bd/sKTf/U93fwnhTAPPxIXO4JdMfuOgB4ladAm+E3i7llcU0R8GosHrfqqWbeGdwLkSS0D4YmEIyzjR1+8O/ruWshfR2ge9Gkw/pkq1gbdWnOtkDoA/qhB6iEU2ejdwVS09FKAiiL7BC0zV5lR4K8UvWk4R6NYVFX9dkRHg3UCo6X8H01oOt8XZDoFgFUt9xRCv0DZ9g+mpqiuKuTcjMp+tEgYgXu4UEFiQ/Yf43fVvnskREP3azUN4ay2iJwSw6TcYPQ0S9ejm7cAHG4RzpmOhpf8714IrWjSmGXEcJ2pedGE5fFPwVK48lVaJMTDfbx0uuigCW9VItMvMrtfLTXyzqaT6MG1vETaq2ZuQr+UlFO42LIq/utdBVZcLWN2n8kRnschu2oDL7P0OQSuprpxZEa0Pn8ciG58CPzVrwT62ZtGjBRDYKgegRjh3BRKx0mLspdcPvNZAbO/2aOngTTdR9fKor49G58q1nAHQT442Frp2fpu5J4CLHkWgx77I7OUfGv75NmWnFly9FPAmFmrG0LJqrVuhwbF7CITmHwu0KXUTALrnhXznfgDYbCNzC4CT6mY065vojn3auVhThmrBW50sCPArAGg0OKLIerKzy+cSXvY7KFYPkZmUazax0BehY2lQLKhcyEZfOJDtLFi9ElqL7CHN96yRa8IGV/cyCYIPerJAPgPg1J21iyPXko+E72Knvnsf+63hqwy9rWxhHagPP4mCir3zPaoy2FKe+roCC4LZtfIIJseuwbpe5n/umowNzEIvkkYDaYJ0/X828D8qC1wuHHGAXwAAAABJRU5ErkJggg=="/>  </span>
+                  </div>
+         <h3>Grey Pakistani Suit & Dupatta</h3>
+              <a href="#">Add To Cart</a>
+            </div>
+          </div>
+          <div class="product">
+            <div class="img__container">
+           <img src="https://i.pinimg.com/originals/bc/f0/1d/bcf01de5e9bd337434ab8bf55cf10733.jpg"/>
+                      </div>
+            <div class="product__bottom">
+              <div class="rating">
+                <span>
+                  <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAAB/UlEQVRIS8WW3VXCMBTH7y2n5fgkLtCkE+gGwgS6gTiBOoE4gWwgTiBMYN3ADZowAT55LMdcTyJgC03a5sghj/m4v/xzcz8QDjTwQFzwBn/N+aW+dDcWU5/Le4GXGe9TQK8aiAoHYSLStnAvcC5YCgjnBoaQRrEc7B38mXHeCSgrgr4VJkeJEG3grRXnMp4A4FUZQs8Rmw/3Bq5Su4aFCk8wEYum8FaKvyQfIdB9lXECfOgyMfp3MGW8t/z1bc9ifBEqTJqqLinWsRmQOtWGSQMQzzYQgn4jNQh/oUX0jgDm+RUG791YzNY2NuB8zodA9NTIuO8mxOsoFpPfKFyNYlLwtVt3rphsSk+9V9UFtSXF69vmGT+DgLSfjusUNF7fglaC9eS/wiugVrBeMMmiQ1MgML/ca1igTrAJKR27HUq94A5oLdg8u+RjALppqzhi0pkVa1NmLpmuOqwtuK5OO8GuolB/EbyLmBjb9jnBueS3APRYD9ndgUCzkM1Ne1Q1nOCljKcEeGE5+7Gat8X7ImLyxAucS0aVBwnevglN4e8gTTZt0NZmV2diVawrFRK9bNn6AMDRtu9WLtG1uKzeJ453wmil0tZbmY+4o97eElkVF/xbqdLmu6J61wezgnXWygO4VQombTtIrT4IYBgpGNs6ktoE4hNKTc4cDPwD27HdH1CL64gAAAAASUVORK5CYII="/>   </span>
+                  <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAAB/UlEQVRIS8WW3VXCMBTH7y2n5fgkLtCkE+gGwgS6gTiBOoE4gWwgTiBMYN3ADZowAT55LMdcTyJgC03a5sghj/m4v/xzcz8QDjTwQFzwBn/N+aW+dDcWU5/Le4GXGe9TQK8aiAoHYSLStnAvcC5YCgjnBoaQRrEc7B38mXHeCSgrgr4VJkeJEG3grRXnMp4A4FUZQs8Rmw/3Bq5Su4aFCk8wEYum8FaKvyQfIdB9lXECfOgyMfp3MGW8t/z1bc9ifBEqTJqqLinWsRmQOtWGSQMQzzYQgn4jNQh/oUX0jgDm+RUG791YzNY2NuB8zodA9NTIuO8mxOsoFpPfKFyNYlLwtVt3rphsSk+9V9UFtSXF69vmGT+DgLSfjusUNF7fglaC9eS/wiugVrBeMMmiQ1MgML/ca1igTrAJKR27HUq94A5oLdg8u+RjALppqzhi0pkVa1NmLpmuOqwtuK5OO8GuolB/EbyLmBjb9jnBueS3APRYD9ndgUCzkM1Ne1Q1nOCljKcEeGE5+7Gat8X7ImLyxAucS0aVBwnevglN4e8gTTZt0NZmV2diVawrFRK9bNn6AMDRtu9WLtG1uKzeJ453wmil0tZbmY+4o97eElkVF/xbqdLmu6J61wezgnXWygO4VQombTtIrT4IYBgpGNs6ktoE4hNKTc4cDPwD27HdH1CL64gAAAAASUVORK5CYII="/>                <span>
+                  <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAAB/UlEQVRIS8WW3VXCMBTH7y2n5fgkLtCkE+gGwgS6gTiBOoE4gWwgTiBMYN3ADZowAT55LMdcTyJgC03a5sghj/m4v/xzcz8QDjTwQFzwBn/N+aW+dDcWU5/Le4GXGe9TQK8aiAoHYSLStnAvcC5YCgjnBoaQRrEc7B38mXHeCSgrgr4VJkeJEG3grRXnMp4A4FUZQs8Rmw/3Bq5Su4aFCk8wEYum8FaKvyQfIdB9lXECfOgyMfp3MGW8t/z1bc9ifBEqTJqqLinWsRmQOtWGSQMQzzYQgn4jNQh/oUX0jgDm+RUG791YzNY2NuB8zodA9NTIuO8mxOsoFpPfKFyNYlLwtVt3rphsSk+9V9UFtSXF69vmGT+DgLSfjusUNF7fglaC9eS/wiugVrBeMMmiQ1MgML/ca1igTrAJKR27HUq94A5oLdg8u+RjALppqzhi0pkVa1NmLpmuOqwtuK5OO8GuolB/EbyLmBjb9jnBueS3APRYD9ndgUCzkM1Ne1Q1nOCljKcEeGE5+7Gat8X7ImLyxAucS0aVBwnevglN4e8gTTZt0NZmV2diVawrFRK9bNn6AMDRtu9WLtG1uKzeJ453wmil0tZbmY+4o97eElkVF/xbqdLmu6J61wezgnXWygO4VQombTtIrT4IYBgpGNs6ktoE4hNKTc4cDPwD27HdH1CL64gAAAAASUVORK5CYII="/>                </span>
+                <span><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAAB/UlEQVRIS8WW3VXCMBTH7y2n5fgkLtCkE+gGwgS6gTiBOoE4gWwgTiBMYN3ADZowAT55LMdcTyJgC03a5sghj/m4v/xzcz8QDjTwQFzwBn/N+aW+dDcWU5/Le4GXGe9TQK8aiAoHYSLStnAvcC5YCgjnBoaQRrEc7B38mXHeCSgrgr4VJkeJEG3grRXnMp4A4FUZQs8Rmw/3Bq5Su4aFCk8wEYum8FaKvyQfIdB9lXECfOgyMfp3MGW8t/z1bc9ifBEqTJqqLinWsRmQOtWGSQMQzzYQgn4jNQh/oUX0jgDm+RUG791YzNY2NuB8zodA9NTIuO8mxOsoFpPfKFyNYlLwtVt3rphsSk+9V9UFtSXF69vmGT+DgLSfjusUNF7fglaC9eS/wiugVrBeMMmiQ1MgML/ca1igTrAJKR27HUq94A5oLdg8u+RjALppqzhi0pkVa1NmLpmuOqwtuK5OO8GuolB/EbyLmBjb9jnBueS3APRYD9ndgUCzkM1Ne1Q1nOCljKcEeGE5+7Gat8X7ImLyxAucS0aVBwnevglN4e8gTTZt0NZmV2diVawrFRK9bNn6AMDRtu9WLtG1uKzeJ453wmil0tZbmY+4o97eElkVF/xbqdLmu6J61wezgnXWygO4VQombTtIrT4IYBgpGNs6ktoE4hNKTc4cDPwD27HdH1CL64gAAAAASUVORK5CYII="/></span>
+               <span><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAAClUlEQVRIS8WW4XXaMBDH78zDtJ9KFrDkCZoNmkzQdoLCBCUThEwQNiiZoGSCwgbZAMkTkE99MS+6vpMtIgOysV/z0Bd/sKTf/U93fwnhTAPPxIXO4JdMfuOgB4ladAm+E3i7llcU0R8GosHrfqqWbeGdwLkSS0D4YmEIyzjR1+8O/ruWshfR2ge9Gkw/pkq1gbdWnOtkDoA/qhB6iEU2ejdwVS09FKAiiL7BC0zV5lR4K8UvWk4R6NYVFX9dkRHg3UCo6X8H01oOt8XZDoFgFUt9xRCv0DZ9g+mpqiuKuTcjMp+tEgYgXu4UEFiQ/Yf43fVvnskREP3azUN4ay2iJwSw6TcYPQ0S9ejm7cAHG4RzpmOhpf8714IrWjSmGXEcJ2pedGE5fFPwVK48lVaJMTDfbx0uuigCW9VItMvMrtfLTXyzqaT6MG1vETaq2ZuQr+UlFO42LIq/utdBVZcLWN2n8kRnschu2oDL7P0OQSuprpxZEa0Pn8ciG58CPzVrwT62ZtGjBRDYKgegRjh3BRKx0mLspdcPvNZAbO/2aOngTTdR9fKor49G58q1nAHQT442Frp2fpu5J4CLHkWgx77I7OUfGv75NmWnFly9FPAmFmrG0LJqrVuhwbF7CITmHwu0KXUTALrnhXznfgDYbCNzC4CT6mY065vojn3auVhThmrBW50sCPArAGg0OKLIerKzy+cSXvY7KFYPkZmUazax0BehY2lQLKhcyEZfOJDtLFi9ElqL7CHN96yRa8IGV/cyCYIPerJAPgPg1J21iyPXko+E72Knvnsf+63hqwy9rWxhHagPP4mCir3zPaoy2FKe+roCC4LZtfIIJseuwbpe5n/umowNzEIvkkYDaYJ0/X828D8qC1wuHHGAXwAAAABJRU5ErkJggg=="/>  </span>
+                  </div>
+
+              <h3>Blue Leather Jacket for Women </h3>
+              <a href="#">Add To Cart</a>
+            </div>
+          </div>
+          <div class="product">
+            <div class="img__container">
+              <img src="http://assets.myntassets.com/h_1440,q_95,w_1080/v1/images/style/properties/Libas-Women-Kurtas_b81daad7d39265c9e8df29edd7ccaba3_images.jpg" alt="" />
+            </div>
+            <div class="product__bottom">
+              <div class="rating">
+                <span>
+                  <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAAB/UlEQVRIS8WW3VXCMBTH7y2n5fgkLtCkE+gGwgS6gTiBOoE4gWwgTiBMYN3ADZowAT55LMdcTyJgC03a5sghj/m4v/xzcz8QDjTwQFzwBn/N+aW+dDcWU5/Le4GXGe9TQK8aiAoHYSLStnAvcC5YCgjnBoaQRrEc7B38mXHeCSgrgr4VJkeJEG3grRXnMp4A4FUZQs8Rmw/3Bq5Su4aFCk8wEYum8FaKvyQfIdB9lXECfOgyMfp3MGW8t/z1bc9ifBEqTJqqLinWsRmQOtWGSQMQzzYQgn4jNQh/oUX0jgDm+RUG791YzNY2NuB8zodA9NTIuO8mxOsoFpPfKFyNYlLwtVt3rphsSk+9V9UFtSXF69vmGT+DgLSfjusUNF7fglaC9eS/wiugVrBeMMmiQ1MgML/ca1igTrAJKR27HUq94A5oLdg8u+RjALppqzhi0pkVa1NmLpmuOqwtuK5OO8GuolB/EbyLmBjb9jnBueS3APRYD9ndgUCzkM1Ne1Q1nOCljKcEeGE5+7Gat8X7ImLyxAucS0aVBwnevglN4e8gTTZt0NZmV2diVawrFRK9bNn6AMDRtu9WLtG1uKzeJ453wmil0tZbmY+4o97eElkVF/xbqdLmu6J61wezgnXWygO4VQombTtIrT4IYBgpGNs6ktoE4hNKTc4cDPwD27HdH1CL64gAAAAASUVORK5CYII="/>   </span>
+                  <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAAB/UlEQVRIS8WW3VXCMBTH7y2n5fgkLtCkE+gGwgS6gTiBOoE4gWwgTiBMYN3ADZowAT55LMdcTyJgC03a5sghj/m4v/xzcz8QDjTwQFzwBn/N+aW+dDcWU5/Le4GXGe9TQK8aiAoHYSLStnAvcC5YCgjnBoaQRrEc7B38mXHeCSgrgr4VJkeJEG3grRXnMp4A4FUZQs8Rmw/3Bq5Su4aFCk8wEYum8FaKvyQfIdB9lXECfOgyMfp3MGW8t/z1bc9ifBEqTJqqLinWsRmQOtWGSQMQzzYQgn4jNQh/oUX0jgDm+RUG791YzNY2NuB8zodA9NTIuO8mxOsoFpPfKFyNYlLwtVt3rphsSk+9V9UFtSXF69vmGT+DgLSfjusUNF7fglaC9eS/wiugVrBeMMmiQ1MgML/ca1igTrAJKR27HUq94A5oLdg8u+RjALppqzhi0pkVa1NmLpmuOqwtuK5OO8GuolB/EbyLmBjb9jnBueS3APRYD9ndgUCzkM1Ne1Q1nOCljKcEeGE5+7Gat8X7ImLyxAucS0aVBwnevglN4e8gTTZt0NZmV2diVawrFRK9bNn6AMDRtu9WLtG1uKzeJ453wmil0tZbmY+4o97eElkVF/xbqdLmu6J61wezgnXWygO4VQombTtIrT4IYBgpGNs6ktoE4hNKTc4cDPwD27HdH1CL64gAAAAASUVORK5CYII="/>                <span>
+                  <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAAB/UlEQVRIS8WW3VXCMBTH7y2n5fgkLtCkE+gGwgS6gTiBOoE4gWwgTiBMYN3ADZowAT55LMdcTyJgC03a5sghj/m4v/xzcz8QDjTwQFzwBn/N+aW+dDcWU5/Le4GXGe9TQK8aiAoHYSLStnAvcC5YCgjnBoaQRrEc7B38mXHeCSgrgr4VJkeJEG3grRXnMp4A4FUZQs8Rmw/3Bq5Su4aFCk8wEYum8FaKvyQfIdB9lXECfOgyMfp3MGW8t/z1bc9ifBEqTJqqLinWsRmQOtWGSQMQzzYQgn4jNQh/oUX0jgDm+RUG791YzNY2NuB8zodA9NTIuO8mxOsoFpPfKFyNYlLwtVt3rphsSk+9V9UFtSXF69vmGT+DgLSfjusUNF7fglaC9eS/wiugVrBeMMmiQ1MgML/ca1igTrAJKR27HUq94A5oLdg8u+RjALppqzhi0pkVa1NmLpmuOqwtuK5OO8GuolB/EbyLmBjb9jnBueS3APRYD9ndgUCzkM1Ne1Q1nOCljKcEeGE5+7Gat8X7ImLyxAucS0aVBwnevglN4e8gTTZt0NZmV2diVawrFRK9bNn6AMDRtu9WLtG1uKzeJ453wmil0tZbmY+4o97eElkVF/xbqdLmu6J61wezgnXWygO4VQombTtIrT4IYBgpGNs6ktoE4hNKTc4cDPwD27HdH1CL64gAAAAASUVORK5CYII="/>                </span>
+                <span><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAAB/UlEQVRIS8WW3VXCMBTH7y2n5fgkLtCkE+gGwgS6gTiBOoE4gWwgTiBMYN3ADZowAT55LMdcTyJgC03a5sghj/m4v/xzcz8QDjTwQFzwBn/N+aW+dDcWU5/Le4GXGe9TQK8aiAoHYSLStnAvcC5YCgjnBoaQRrEc7B38mXHeCSgrgr4VJkeJEG3grRXnMp4A4FUZQs8Rmw/3Bq5Su4aFCk8wEYum8FaKvyQfIdB9lXECfOgyMfp3MGW8t/z1bc9ifBEqTJqqLinWsRmQOtWGSQMQzzYQgn4jNQh/oUX0jgDm+RUG791YzNY2NuB8zodA9NTIuO8mxOsoFpPfKFyNYlLwtVt3rphsSk+9V9UFtSXF69vmGT+DgLSfjusUNF7fglaC9eS/wiugVrBeMMmiQ1MgML/ca1igTrAJKR27HUq94A5oLdg8u+RjALppqzhi0pkVa1NmLpmuOqwtuK5OO8GuolB/EbyLmBjb9jnBueS3APRYD9ndgUCzkM1Ne1Q1nOCljKcEeGE5+7Gat8X7ImLyxAucS0aVBwnevglN4e8gTTZt0NZmV2diVawrFRK9bNn6AMDRtu9WLtG1uKzeJ453wmil0tZbmY+4o97eElkVF/xbqdLmu6J61wezgnXWygO4VQombTtIrT4IYBgpGNs6ktoE4hNKTc4cDPwD27HdH1CL64gAAAAASUVORK5CYII="/></span>
+               <span><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAAClUlEQVRIS8WW4XXaMBDH78zDtJ9KFrDkCZoNmkzQdoLCBCUThEwQNiiZoGSCwgbZAMkTkE99MS+6vpMtIgOysV/z0Bd/sKTf/U93fwnhTAPPxIXO4JdMfuOgB4ladAm+E3i7llcU0R8GosHrfqqWbeGdwLkSS0D4YmEIyzjR1+8O/ruWshfR2ge9Gkw/pkq1gbdWnOtkDoA/qhB6iEU2ejdwVS09FKAiiL7BC0zV5lR4K8UvWk4R6NYVFX9dkRHg3UCo6X8H01oOt8XZDoFgFUt9xRCv0DZ9g+mpqiuKuTcjMp+tEgYgXu4UEFiQ/Yf43fVvnskREP3azUN4ay2iJwSw6TcYPQ0S9ejm7cAHG4RzpmOhpf8714IrWjSmGXEcJ2pedGE5fFPwVK48lVaJMTDfbx0uuigCW9VItMvMrtfLTXyzqaT6MG1vETaq2ZuQr+UlFO42LIq/utdBVZcLWN2n8kRnschu2oDL7P0OQSuprpxZEa0Pn8ciG58CPzVrwT62ZtGjBRDYKgegRjh3BRKx0mLspdcPvNZAbO/2aOngTTdR9fKor49G58q1nAHQT442Frp2fpu5J4CLHkWgx77I7OUfGv75NmWnFly9FPAmFmrG0LJqrVuhwbF7CITmHwu0KXUTALrnhXznfgDYbCNzC4CT6mY065vojn3auVhThmrBW50sCPArAGg0OKLIerKzy+cSXvY7KFYPkZmUazax0BehY2lQLKhcyEZfOJDtLFi9ElqL7CHN96yRa8IGV/cyCYIPerJAPgPg1J21iyPXko+E72Knvnsf+63hqwy9rWxhHagPP4mCir3zPaoy2FKe+roCC4LZtfIIJseuwbpe5n/umowNzEIvkkYDaYJ0/X828D8qC1wuHHGAXwAAAABJRU5ErkJggg=="/>  </span>
+                  </div>
+              <h3>Libas Green Salwar-Suit & Dupatta</h3>
+              <a href="#">Add To Cart</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Blog -->
+    <section class="section blog" id="blog">
+      <div class="blog__container container">
+        <div class="title">
+          <h1 class="primary__title">Blogs</h1>
+        </div>
+
+        <div class="blog__center">
+          <div class="blog__box">
+            <div class="img__cover">
+              <img src="https://i.pinimg.com/originals/e2/10/ee/e210ee6848039b06e5e79e90dca5ef18.jpg"/>
+             </div>
+            <div class="box__content">
+              <h2>Here are the trends !<br>FashionIsta</h2>
+              <a href="#">Read more</a>
+            </div>
+          </div>
+
+          <div class="blog__box">
+            <div class="img__cover">
+              <img src="https://blog.myntra.com/wp-content/uploads/2017/08/blouse.jpg" alt="" />
+            </div>
+            <div class="box__content">
+              <h2>Here are the trends !<br>Looks to Love</h2>
+              <a href="#">Read more</a>
+            </div>
+          </div>
+
+          <div class="blog__box">
+            <div class="img__cover">
+              <img src="https://i.pinimg.com/originals/00/51/95/00519582a3718eb6d1ae1086f001cd0b.jpg" alt="" />
+            </div>
+            <div class="box__content">
+              <h2>Here are the trends!<br>Go For Yourself</h2>
+              <a href="#">Read more</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Newsletter -->
+    <section class="section newsletter" id="newsletter">
+      <div class="newsletter__container container">
+        <div class="title">
+          <h1 class="primary__title">Newsletter</h1>
+        </div>
+
+        <div class="newsletter__center">
+          <div class="newsletter__box">
+            <h2>Newsletter</h2>
+            <p>
+              Subscribe to our newsletter and get 20% off your first purchase
+            </p>
+          </div>
+
+          <div class="newsletter__box">
+            <form action="#">
+              <input type="email" placeholder="Your email" />
+              <button>SUBSCRIBE</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="footer" class="section footer">
+      <div class="container">
+        <div class="footer__top">
+          <div class="footer-top__box">
+            <h3>EXTRAS</h3>
+            <a href="#">Brands</a>
+            <a href="#">Gift Certificates</a>
+            <a href="#">Affiliate</a>
+            <a href="#">Specials</a>
+            <a href="#">Site Map</a>
+          </div>
+          <div class="footer-top__box">
+            <h3>INFORMATION</h3>
+            <a href="#">About Us</a>
+            <a href="#">Privacy Policy</a>
+            <a href="#">Terms & Conditions</a>
+            <a href="#">Contact Us</a>
+            <a href="#">Site Map</a>
+          </div>
+          <div class="footer-top__box">
+            <h3>MY ACCOUNT</h3>
+            <a href="#">My Account</a>
+            <a href="#">Order History</a>
+            <a href="#">Wish List</a>
+            <a href="#">Newsletter</a>
+            <a href="#">Returns</a>
+          </div>
+          <div class="footer-top__box">
+            <h3>CONTACT US</h3>
+            <div>
+              <span>
+                <img  src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAACgklEQVRIS9WWzXXaQBDH/7OSjDjZqSB2BcYVBF4ewrfgCuwOgiuw0wGuIE4FITdH5INUENwB9xwCJwQrNHmjDyKEFISdF5y9gWb3NzP735kh7GjRjrh42mBG/cAzreMy2bF9fU8YjDfZFkY8tU8P1YKvGFwHcLjpoMz3EYEGgUFvqt7dKG9vLnhuNWsB6CuAg3jTBMCwJLwGYD+2HStwY0/31/augSVSWgTfQyjjA5uqU+R1kSPhGX7QBeEVgDEb6iR7xhp4Zjm3DJwL1Pbddskol2babDV8BKrq9z97ptMTOAHvKtq9SJ+1Bvas5gig52yoo20jFeiC+EsIYDiK+EcAkuyNbO0eFYJFvTNr7yeAe1u7cldrK77/c4Dj7zRkQ92Ik1Oz+ZKIPskmg7ll+X3XsxyW3xU9f5ZW+0rEU/O0ThSIqL7Z2hU1ryzPanUBfl2Q/q6t3UvPdJoGmAQqdp7liLCOmVWj6t8Nkr2lwWmo3BkIvTil7VAT4aIbW3/spB3zLEdgLx4EjtMrdwUinFXmbgSN12zPaTPjfXi1GW08CpxEm6fOJTx5DZmoHwmO0pUXbQKeWs0LAr3N6uN/BUdq/uep3pm4ovf4+w0T6Hb1OXFcDv/yc0oE9OcCsg4tXUBSJXNoa/ckr0JF3Ys7qyWTukV1vVTJjDx8eJPIOprSxsTWbtLboxqXNU61xZ7tu2cFdbnU31u1xXgQkMK+D0aPTXW5bXsMI2W6AkH6+YQNVds4CEgocYqkWi1HGIBLjj4k7XI5MjGrdror5XandP6iYS+4ZoReJw6USrFESUAvMNT1VsNe9nRxAn65SdOgxThvuMue+bQH+rL53cZuZxH/AtVVvy6MsdSFAAAAAElFTkSuQmCC"/> <span>
+                <span><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAABA0lEQVRIS+2W0Q2CMBBA70QInUI3ET8kfLKCk6iT6AbGPwIf6gaOABv4Bwp6RjSCGC1VkBDoJ2n7eq93RxEqGlgRF+oL9lWjD9Gp9zDXlTwWWC7P5NcR+11DQzzPAaCfgWzV0NZKAR8U3SSC5ZvNywMH8sgFwETv8wnKAd8Vr7N6CWETfyNyWegsClf9qpk8NXSy98zjipeTr+hTJJikds6lNnsS4axuBjiQ9WviDLgXFycXrNTINnlzc6kWARPCjB3t6f/BQOPCykkoYuoMWWTdavrDyKU6vb4ZWd1G3LbMPC+O9idRowYSP2eTl6WEp70SOjtei/z5jkUB7+YLq649+ALlgpsfn6EepwAAAABJRU5ErkJggg=="/></span>
+                <span><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAAC7ElEQVRIS+VWTVraUBQ9NxB4jMQVVFcArkAcGJ1pV6BdQXEFpStQV1BcQelMw6BxBeoKiisojIg8zO138wMhPJLYiV+/vhnkJeeec+857xHeadE74eLfAmZ0mn7Vbolaaq6fCN74rcqVZjytHncs4jMGnwJoZoDGBBoEYK+h3ZsyRRQCz+zDdgBcAtRJffA+8/H95W/2LOCipoePeQXkAgtLouB7xJCfGegprQcmaV9qzikzegDCFjD4U0MP+5vANwLHoD+jF+la6btuGQl9+6gL8GURuBF4qo536DV4EKZFlZuKidmLUrDAeybZjcB+1RmAcJJmmkxyYz7M9tcoxJI5e0oPD7Kb1oCjYaIH6Wld67b0U0Bf7Nqvtyrg244HYN+k2hqwbx9dAfwZoAul766k0nTfADODXMkZP9TcFRsulgH4cATQB65Yuw3/diQ7pzWnR4wvyVub+mYC921HwoWVdrcLgB0WmZUe7iQbVxgbqs+b9oXcKSKhT9Ivxb38DeBeaXcRGPH/wn4r3YJS9ooHldk6aMxvpeeRQdMvxzaSIVoBzvR5bIEPipJpoVYZ4AhApMZIaXc3y+jFdvoMnAFYARffIkCrNp9dZ1OtlNQRcDRcdT3bNkbjEhwE6oMwYGaJRjk4xgB9TdyQIjJR2l05WErZKct8aTlDl1PDlyQYATd17Z7nTvUyQDCq69neprM2zHIE3SjhFmtigTtJ/xP1iPCxPnMHucCxPHKktbKTaJriKEpVW56puf+YFJqy4Nqgrk310reh6bc29bnIRlP78JxA3wCsKFBW6iel3ZCJsCp7vUmnXN7JZhqu6DxlyAkloSFBIgWMiNE3WSaU266dEMKLgCTehAjn2b7mMk58l5FzEqXWYo0Bjq82JDYJlYnXvQXuFgWMgXEYIBMwPBB5XKGBHBZRqnEXCE7F56uF8TOBvICtfjoW82ZhLau1be8UVSsflEIqr6/NMntNBRTeMosm+G+f/3/AfwBQT6gu+whjiwAAAABJRU5ErkJggg=="/></span>
+              </DIV> 
+            <div>
+              <span><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAABwklEQVRIS+2Wb07CQBDF36gkJiVpewK5gXiDvYFwAuEE4gksJxBPIDcQT+AeAW6AJ2hJqDFBGbPtbrMQafmzkS/wjWb6fjNvZ6ZLONKPjsTFCfxvzq9YHXuiQ8AjgIbjDKYM9MNUDo1uAY7rQhDj3TFwRY6BmzCVY/XQBkfEWbVgQt9lArZuOJfRRjAxIv9TOoHHdbFSUCk4q5Yw4gt0w0Qm+1QfByKgb7yA0TLvKyerwXm0aoq2OZdtE4g90STgdb1JK8FEeGPGrQYlDDzYHVmWgJ6MJwBBZpylVQkOUkmxJ3oEKAHtPIZ+Krtl0JknhgzcFdbmCQ8ST7Bp2lKrFVgF6hEbAfC12Jh/0A6/5NROIL4UDTrPrG3q5zMmtMK5lOr/zuAMrppkASVwXVhPaBtRnZyCZtYCmHANwm7KvcCmspknBgzcF9YzouUZyMyons1nP5W99eM4CJxVn6/UgWV9kRcDvU0NeDBYw9WoqJ1rrJ8w0CkbOSdgc+5ni6xyLGvoVS0ZZ+BtF4mJO4H1BOSG2F8R9XXa1c6yeKZcb9PKPM5FwJpTld2Vy4oBfDAQ/Xn1cQyqlDvdqystchVwNKt/AceZKS67teNGAAAAAElFTkSuQmCC"/></span>
+              <b>shopify__women@gmail.com</b>
+            </div>
+            <div>
+              <span>
+                <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAACfElEQVRIS8WWzXXaQBSF78OMJFZ2Kkg6MK4gsEDJLkoFdjqACoIriDsIqcB458iL4Aoid4ArCDuEBvNyRkhm0OgHg86BHUfSfO/nvvuGcKQfHYmLUjCjc7YQ4pL55Km1vJ/UGWQheA21/gBoKyCDv7Xkw6gueC44C01hdcINsAnlZ4De1w03wGHTHYPwJQE92TLqhEJ4BPpZJ3wLHIleewX6q0MJk5n6Pxe9qzrhW+B583OHaKUEBeZGN6vkUHzqA/wjCWzmSP/dvmIrzJgIX+3IH2/Ku61yAI+O9Du1gNUhoXA5zphw3Yr8YXpwKFw1xx/z2rAP3BSXcAMA52DcOUvf08BxQAA/21K2097vA1XfGOCFcEcMXKqHjvRfn2tqP6i3aaAm2HI9ZtzGUWl91lVdh5HkOlcoXDVCpwBPHPnQ3ZS7N03MZGrL6OKQcueC55Y7JMb37FhlZjmwZdTV4clSuQWozeBBmbeXefW/JNPAkf5FmrWuAQBTBoYt6f/K8/eylhRup62stdFSgEhYN6kAUzMBoNrzIavyInjpPg7T0cpZi+uyY6gvkHTGARppDpe7UkvBiXcr4ziN+52zk+MAmLxksTzaMvJU36u8vfLqk1kcIMbQXvrXuxiHAdf8vxKsANnMAQTMjUHVdSgRnNp2Se9p4MjfN7nOVZRJAldXn/PNOzxh0Eip2hSVsVTi3Z6O304Z64cmau+nfX99xhgTEKBBwWq1mhGRyiy+rwHYgr4pYx2uShhaVp8YZgBmyQzo3mD97IXlemB4vM5Oa0M8Bnf2MrrKs9Y3l7pKzUoLL3xyhiamrfB+WvR+7eCqwArX4q4fHvre0TL+D/rOVi4Uj4k/AAAAAElFTkSuQmCC"/></span>             <b > +91  995-534-7654</b>
+            </div>
+
+           
+          </div>
+          
+
+        </div>     
+
+      </div>
+
+      </div>
+
+    </footer>
+    <!-- End Footer -->   
+
+         <div class="end_footer"><h4>&#169; 2021 copyright all right reserved</h4></div>
+
+  </main>
+
+  <!-- Glidejs -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Glide.js/3.4.1/glide.min.js"></script>
+  <script src="https://unpkg.com/boxicons@latest/dist/boxicons.js"></script>
+
+
+  <!-- Custom Script -->
+  <script src="slidr.js"></script>
+  <script src="shopify.js"></script>
+</body>
+
+</html>
